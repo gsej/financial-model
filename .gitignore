@@ -1,0 +1,7 @@
+nohup.out
+.idea
+**/bin/
+**/obj/
+**/*.xlsx*
+**/*lock*ods*
+*DotSettings.user
