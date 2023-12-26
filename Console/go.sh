@@ -1,2 +1,0 @@
-rm *.xlsx
-dotnet run

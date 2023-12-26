@@ -1,4 +1,5 @@
-﻿using DocumentFormat.OpenXml.Wordprocessing;
+﻿using Microsoft.Extensions.Configuration;
+using PredictorLibrary;
 
 namespace Console;
 
@@ -6,45 +7,21 @@ class Program
 {
     static void Main(string[] args)
     {
-        var years = new List<YearRecord>();
-        YearRecord previousYear = null;
-        for (var yearNumber = 0; yearNumber < Configuration.YearsToCover; yearNumber++)
-        {
-            if (yearNumber == 0)
-            {
-                var year = new YearRecord(
-                    Configuration.StartCalendarYear,
-                    Configuration.InitialAge,
-                    yearNumber,
-                    Configuration.AnnualContribution
-                );
+        var configurationBuilder = new ConfigurationBuilder()
+            .AddJsonFile($"appsettings.json")
+            .AddUserSecrets<Program>();
+            
+        var config = configurationBuilder.Build();
 
-                years.Add(year);
-                previousYear = year;
-            }
-            else
-            {
-                var year = new YearRecord(previousYear);
-                ;
-                years.Add(year);
-                previousYear = year;
-            }
-        }
+        var modelParameters = new ModelParameters();
+       config.Bind("ModelParameters", modelParameters);
 
-        using var excelOutput = new ExcelOutput();
-        excelOutput.Output(years);
+       var predictor = new Predictor(modelParameters);
+       var predictions = predictor.Predict(1000);
 
-
-        // year at age 67:
-        var year67 = years.SingleOrDefault(year => year.Age == 67);
-
-        if (year67 != null)
-        {
-            excelOutput.WriteSavingsAt67(year67.EndOfYear);
-            //     System.Console.WriteLine($"At age 67 balance is {year67.EndOfYear}");
-        }
-
-
-        excelOutput.Save();
+       foreach (var predication in predictions)
+       {
+           System.Console.WriteLine(predication.ToString("F0"));
+       }
     }
 }

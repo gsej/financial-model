@@ -14,10 +14,11 @@ public class ZeroReturnTests
             StartYear = 2024,
             AgeAtStart = 50,
             EndYear = 2044,
-            AmountAtStart = 0m,
-            AnnualContribution = 1000m,
-            GrowthReturn = 0m,
-            GrowthAllocation = 1m
+            AmountAtStart = 0,
+            AnnualContribution = 1000,
+            GrowthReturnMean = 0,
+            GrowthAllocation = 1,
+            MinimalRiskReturnMean = 0
         };
     }
     
@@ -42,7 +43,7 @@ public class ZeroReturnTests
     [InlineData(1, 2000)]
     [InlineData(5, 6000)]
     [InlineData(20, 21000)]
-    public void CanCalulateTotalForYear(int yearIndex, decimal expectedTotal)
+    public void CanCalulateTotalForYear(int yearIndex, double expectedTotal)
     {
         // act
         var model = new PensionModel(_modelParameters);

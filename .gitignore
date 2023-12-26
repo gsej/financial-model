@@ -3,5 +3,6 @@ nohup.out
 **/bin/
 **/obj/
 **/*.xlsx*
+**/*.ods*
 **/*lock*ods*
 *DotSettings.user

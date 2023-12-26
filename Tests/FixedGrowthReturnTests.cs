@@ -14,10 +14,13 @@ public class FixedGrowthReturnTests
             StartYear = 2024,
             AgeAtStart = 50,
             EndYear = 2044,
-            AmountAtStart = 0m,
-            AnnualContribution = 1000m,
-            GrowthReturn = 0.05m,
-            GrowthAllocation = 1m
+            AmountAtStart = 0,
+            AnnualContribution = 1000,
+            GrowthReturnMean = 0.05,
+            GrowthReturnStandardDeviation = 0,
+            GrowthAllocation = 1,
+            MinimalRiskReturnMean = 0,
+            MinimalRiskReturnStandardDeviation = 0
         };
     }
     
@@ -30,7 +33,7 @@ public class FixedGrowthReturnTests
 
         var firstYear = model.GetYear(0);
 
-        var expectedGrowth = firstYear.AmountAtStartOfYear * _modelParameters.GrowthReturn;
+        var expectedGrowth = firstYear.AmountAtStartOfYear * _modelParameters.GrowthReturnMean;
         
         // assert
         firstYear.Index.Should().Be(0);
@@ -45,7 +48,7 @@ public class FixedGrowthReturnTests
     [InlineData(1, 2152.50 )]
     [InlineData(5, 7142.01 )]
     [InlineData(20, 37505.21 )]
-    public void CanCalulateTotalForYear(int yearIndex, decimal expectedTotal)
+    public void CanCalulateTotalForYear(int yearIndex, double expectedTotal)
     {
         // act
         var model = new PensionModel(_modelParameters);
@@ -55,6 +58,6 @@ public class FixedGrowthReturnTests
         // assert
         var yearFigures = model.GetYear(yearIndex);
 
-        yearFigures.AmountAtEndOfYear.Should().BeApproximately(expectedTotal, 0.01m);
+        yearFigures.AmountAtEndOfYear.Should().BeApproximately(expectedTotal, 0.01);
     }
 }

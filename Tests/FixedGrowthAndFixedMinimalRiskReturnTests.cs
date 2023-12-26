@@ -3,21 +3,22 @@ using PredictorLibrary;
 
 namespace Tests;
 
-public class FixedGrowthReturnTests
+public class FixedGrowthAndFixedMinimalRiskReturnTests
 {
     private ModelParameters _modelParameters;
 
-    public FixedGrowthReturnTests()
+    public FixedGrowthAndFixedMinimalRiskReturnTests()
     {
         _modelParameters = new ModelParameters
         {
             StartYear = 2024,
             AgeAtStart = 50,
             EndYear = 2044,
-            AmountAtStart = 0m,
-            AnnualContribution = 1000m,
-            GrowthReturn = 0.05m,
-            GrowthAllocation = 1m
+            AmountAtStart = 0,
+            AnnualContribution = 1000,
+            GrowthReturnMean = 0.05,
+            GrowthAllocation = 0.5,
+            MinimalRiskReturnMean = 0.01
         };
     }
     
@@ -29,23 +30,20 @@ public class FixedGrowthReturnTests
         model.Calculate();
 
         var firstYear = model.GetYear(0);
-
-        var expectedGrowth = firstYear.AmountAtStartOfYear * _modelParameters.GrowthReturn;
         
         // assert
         firstYear.Index.Should().Be(0);
         firstYear.Year.Should().Be(_modelParameters.StartYear);
         firstYear.Age.Should().Be(_modelParameters.AgeAtStart);
         firstYear.AmountAtStartOfYear.Should().Be(_modelParameters.AnnualContribution);
-        firstYear.AmountAtEndOfYear.Should().Be(firstYear.AmountAtStartOfYear + expectedGrowth);
     }
 
     [Theory]
-    [InlineData(0, 1050)]
-    [InlineData(1, 2152.50 )]
-    [InlineData(5, 7142.01 )]
-    [InlineData(20, 37505.21 )]
-    public void CanCalulateTotalForYear(int yearIndex, decimal expectedTotal)
+    [InlineData(0, 1030)]
+    [InlineData(1, 2090.90 )]
+    [InlineData(5, 6662.46)]
+    [InlineData(20, 29536.78 )]
+    public void CanCalulateTotalForYear(int yearIndex, double expectedTotal)
     {
         // act
         var model = new PensionModel(_modelParameters);
@@ -55,6 +53,6 @@ public class FixedGrowthReturnTests
         // assert
         var yearFigures = model.GetYear(yearIndex);
 
-        yearFigures.AmountAtEndOfYear.Should().BeApproximately(expectedTotal, 0.01m);
+        yearFigures.AmountAtEndOfYear.Should().BeApproximately(expectedTotal, 0.01);
     }
 }
