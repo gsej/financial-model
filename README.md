@@ -1,4 +1,7 @@
 # pension-predictor
+
+(not even vaguely finished or useful at the moment...)
+
 Implements the Lars Kroijer pension prediction spreadsheet but with code (removing need for Excel).
 
 In his video series (https://www.youtube.com/watch?v=1LUIQa5hgMg) Lars creates a spreadsheet predicting the performance of a 
