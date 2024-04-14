@@ -72,7 +72,6 @@ public record FiguresForYear(
     int Age,
     double AmountAtEndOfPriorYear,
     double AnnualContribution, // Notionally applied at the start of each year
-    double AmountAtStartOfYear,
     double MinimalRiskAllocation,
     double GrowthAllocation,
     double MinimalRiskReturn,
@@ -94,5 +93,6 @@ public record FiguresForYear(
     
     public double ReturnAmount => MinimalRiskReturnAmount + GrowthReturnAmount;
 
+    public double AmountAtStartOfYear => AmountAtEndOfPriorYear + AnnualContribution;
     public double AmountAtEndOfYear => AmountAtStartOfYear + ReturnAmount;
 }

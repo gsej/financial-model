@@ -35,7 +35,7 @@ public class ZeroReturnTests
         firstYear.Index.Should().Be(0);
         firstYear.Year.Should().Be(_modelParameters.StartYear);
         firstYear.Age.Should().Be(_modelParameters.AgeAtStart);
-        firstYear.AmountAtStartOfYear.Should().Be(_modelParameters.AnnualContribution);
+        firstYear.AmountAtStartOfYear.Should().Be(_modelParameters.AmountAtStart + _modelParameters.AnnualContribution);
         firstYear.AmountAtEndOfYear.Should().Be(firstYear.AmountAtStartOfYear);
     }
 

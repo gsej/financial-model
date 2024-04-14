@@ -49,7 +49,7 @@ public class PensionModel
             Age: _modelParameters.AgeAtStart,
             AmountAtEndOfPriorYear: _modelParameters.AmountAtStart,
             AnnualContribution: _modelParameters.AnnualContribution,
-            AmountAtStartOfYear: _modelParameters.AmountAtStart,
+            
             MinimalRiskAllocation: _modelParameters.MinimalRiskAllocation,
             GrowthAllocation: _modelParameters.GrowthAllocation,
             MinimalRiskReturn: _minimalRiskReturnRateCalculator.GetReturnRate(),
@@ -70,7 +70,6 @@ public class PensionModel
             Year: previousYear.Year + 1,
             Age: previousYear.Age + 1,
             AmountAtEndOfPriorYear: previousYear.AmountAtEndOfYear,
-            AmountAtStartOfYear: amountAtStartOfYear,
             AnnualContribution: _modelParameters.AnnualContribution,
        //     Return: growth,
         //    AmountAtEndOfYear: amountAtEndOfYear,
