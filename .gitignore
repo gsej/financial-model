@@ -6,3 +6,4 @@ nohup.out
 **/*.ods*
 **/*lock*ods*
 *DotSettings.user
+*.csv

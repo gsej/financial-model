@@ -19,11 +19,9 @@ public class PensionModel
         return _years[index];
     }
 
-    public IEnumerable<FiguresForYear> Years()
-    {
-        return _years;
-    }
-
+    public IEnumerable<FiguresForYear> Years => _years;
+    
+    
     public void Calculate()
     {
         var firstYear = CalculateFirstYear();
@@ -41,16 +39,22 @@ public class PensionModel
 
     private FiguresForYear CalculateFirstYear()
     {
-        var amountAtStartOfYear = (_modelParameters.AmountAtStart + _modelParameters.AnnualContribution);
-        var growth = CalculateReturn(amountAtStartOfYear);
-        var amountAtEndOfYear = amountAtStartOfYear + growth;
+       // var amountAtStartOfYear = _modelParameters.AmountAtStart;
+       // var growth = CalculateReturn(amountAtStartOfYear);
+     //   var amountAtEndOfYear = amountAtStartOfYear + growth;
 
         var year = new FiguresForYear(
             Index: 0,
             Year: _modelParameters.StartYear,
             Age: _modelParameters.AgeAtStart,
-            AmountAtStartOfYear: amountAtStartOfYear,
-            AmountAtEndOfYear: amountAtEndOfYear);
+            AmountAtEndOfPriorYear: _modelParameters.AmountAtStart,
+            AnnualContribution: _modelParameters.AnnualContribution,
+            AmountAtStartOfYear: _modelParameters.AmountAtStart,
+            MinimalRiskAllocation: _modelParameters.MinimalRiskAllocation,
+            GrowthAllocation: _modelParameters.GrowthAllocation,
+            MinimalRiskReturn: _minimalRiskReturnRateCalculator.GetReturnRate(),
+            GrowthReturn: _growthReturnRateCalculator.GetReturnRate()
+        );
 
         return year;
     }
@@ -58,16 +62,24 @@ public class PensionModel
     private FiguresForYear CalculateYear(FiguresForYear previousYear)
     {
         var amountAtStartOfYear = previousYear.AmountAtEndOfYear + _modelParameters.AnnualContribution;
-        var growth = CalculateReturn(amountAtStartOfYear);;
-        var amountAtEndOfYear = amountAtStartOfYear + growth;
-        
+    //    var growth = CalculateReturn(amountAtStartOfYear);;
+   //     var amountAtEndOfYear = amountAtStartOfYear + growth;
+
         var year = new FiguresForYear(
             Index: previousYear.Index + 1,
-            Year: previousYear.Year +1,
+            Year: previousYear.Year + 1,
             Age: previousYear.Age + 1,
+            AmountAtEndOfPriorYear: previousYear.AmountAtEndOfYear,
             AmountAtStartOfYear: amountAtStartOfYear,
-            AmountAtEndOfYear: amountAtEndOfYear);
-
+            AnnualContribution: _modelParameters.AnnualContribution,
+       //     Return: growth,
+        //    AmountAtEndOfYear: amountAtEndOfYear,
+            MinimalRiskAllocation: _modelParameters.MinimalRiskAllocation,
+            GrowthAllocation: _modelParameters.GrowthAllocation,
+            MinimalRiskReturn: _minimalRiskReturnRateCalculator.GetReturnRate(),
+            GrowthReturn: _growthReturnRateCalculator.GetReturnRate()
+        );
+        
         return year;
     }
 

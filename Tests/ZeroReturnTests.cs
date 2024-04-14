@@ -43,7 +43,7 @@ public class ZeroReturnTests
     [InlineData(1, 2000)]
     [InlineData(5, 6000)]
     [InlineData(20, 21000)]
-    public void CanCalulateTotalForYear(int yearIndex, double expectedTotal)
+    public void CanCalculateTotalForYear(int yearIndex, double expectedTotal)
     {
         // act
         var model = new PensionModel(_modelParameters);

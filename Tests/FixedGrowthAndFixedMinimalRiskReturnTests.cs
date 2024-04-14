@@ -43,7 +43,7 @@ public class FixedGrowthAndFixedMinimalRiskReturnTests
     [InlineData(1, 2090.90 )]
     [InlineData(5, 6662.46)]
     [InlineData(20, 29536.78 )]
-    public void CanCalulateTotalForYear(int yearIndex, double expectedTotal)
+    public void CanCalculateTotalForYear(int yearIndex, double expectedTotal)
     {
         // act
         var model = new PensionModel(_modelParameters);
