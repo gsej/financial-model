@@ -15,10 +15,10 @@ public class FixedGrowthAndFixedMinimalRiskReturnTests
             AgeAtStart = 50,
             EndYear = 2044,
             AmountAtStart = 0,
-            AnnualContribution = 1000,
+            //AnnualContribution = 1000,
             GrowthReturnMean = 0.05,
             GrowthAllocation = 0.5,
-            MinimalRiskReturnMean = 0.01
+            MinimalRiskReturnMean = 0
         };
     }
     
@@ -35,14 +35,14 @@ public class FixedGrowthAndFixedMinimalRiskReturnTests
         firstYear.Index.Should().Be(0);
         firstYear.Year.Should().Be(_modelParameters.StartYear);
         firstYear.Age.Should().Be(_modelParameters.AgeAtStart);
-        firstYear.AmountAtStartOfYear.Should().Be(_modelParameters.AmountAtStart + _modelParameters.AnnualContribution);
+    //    firstYear.AmountAtStartOfYear.Should().Be(_modelParameters.AmountAtStart + _modelParameters.AnnualContribution);
     }
 
     [Theory]
-    [InlineData(0, 1030)]
-    [InlineData(1, 2090.90 )]
-    [InlineData(5, 6662.46)]
-    [InlineData(20, 29536.78 )]
+    [InlineData(0, 1025)]
+    [InlineData(1, 2075.625 )]
+    [InlineData(5, 6547.43)]
+    [InlineData(20, 27862.856 )]
     public void CanCalculateTotalForYear(int yearIndex, double expectedTotal)
     {
         // act

@@ -48,8 +48,7 @@ public class PensionModel
             Year: _modelParameters.StartYear,
             Age: _modelParameters.AgeAtStart,
             AmountAtEndOfPriorYear: _modelParameters.AmountAtStart,
-            AnnualContribution: _modelParameters.AnnualContribution,
-            
+            NetContribution: _modelParameters.NetContribution(0),
             MinimalRiskAllocation: _modelParameters.MinimalRiskAllocation,
             GrowthAllocation: _modelParameters.GrowthAllocation,
             MinimalRiskReturn: _minimalRiskReturnRateCalculator.GetReturnRate(),
@@ -61,7 +60,7 @@ public class PensionModel
 
     private FiguresForYear CalculateYear(FiguresForYear previousYear)
     {
-        var amountAtStartOfYear = previousYear.AmountAtEndOfYear + _modelParameters.AnnualContribution;
+   //     var amountAtStartOfYear = previousYear.AmountAtEndOfYear + _modelParameters.AnnualContribution;
     //    var growth = CalculateReturn(amountAtStartOfYear);;
    //     var amountAtEndOfYear = amountAtStartOfYear + growth;
 
@@ -70,7 +69,7 @@ public class PensionModel
             Year: previousYear.Year + 1,
             Age: previousYear.Age + 1,
             AmountAtEndOfPriorYear: previousYear.AmountAtEndOfYear,
-            AnnualContribution: _modelParameters.AnnualContribution,
+            NetContribution: _modelParameters.NetContribution(previousYear.Index + 1),
        //     Return: growth,
         //    AmountAtEndOfYear: amountAtEndOfYear,
             MinimalRiskAllocation: _modelParameters.MinimalRiskAllocation,
@@ -78,6 +77,8 @@ public class PensionModel
             MinimalRiskReturn: _minimalRiskReturnRateCalculator.GetReturnRate(),
             GrowthReturn: _growthReturnRateCalculator.GetReturnRate()
         );
+        
+        
         
         return year;
     }

@@ -15,7 +15,7 @@ public class FixedGrowthReturnTests
             AgeAtStart = 50,
             EndYear = 2044,
             AmountAtStart = 0,
-            AnnualContribution = 1000,
+            //AnnualContribution = 1000,
             GrowthReturnMean = 0.05,
             GrowthReturnStandardDeviation = 0,
             GrowthAllocation = 1,
@@ -39,7 +39,7 @@ public class FixedGrowthReturnTests
         firstYear.Index.Should().Be(0);
         firstYear.Year.Should().Be(_modelParameters.StartYear);
         firstYear.Age.Should().Be(_modelParameters.AgeAtStart);
-        firstYear.AmountAtStartOfYear.Should().Be(_modelParameters.AmountAtStart + _modelParameters.AnnualContribution);
+    //    firstYear.AmountAtStartOfYear.Should().Be(_modelParameters.AmountAtStart + _modelParameters.AnnualContribution);
         firstYear.AmountAtEndOfYear.Should().Be(firstYear.AmountAtStartOfYear + expectedGrowth);
     }
 

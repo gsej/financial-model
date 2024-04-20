@@ -44,7 +44,7 @@ public class FiguresForYearMap : ClassMap<FiguresForYear>
         Map(f => f.Age);
         Map(f => f.Index).Name("Number of years");
         Map(f => f.AmountAtEndOfPriorYear).Name("End of prior year").TypeConverter<MoneyConverter>();
-        Map(f => f.AnnualContribution).Name("Annual contribution");
+        Map(f => f.NetContribution).Name("Annual contribution");
         Map(f => f.AmountAtStartOfYear).Name("Start of year").TypeConverter<MoneyConverter>();
         Map(f => f.ReturnAmount).Name("Investment return").TypeConverter<MoneyConverter>();
         Map(f => f.AmountAtEndOfYear).Name("End of year").TypeConverter<MoneyConverter>();
@@ -71,7 +71,7 @@ public record FiguresForYear(
     int Year,
     int Age,
     double AmountAtEndOfPriorYear,
-    double AnnualContribution, // Notionally applied at the start of each year
+    double NetContribution, // Notionally applied at the start of each year
     double MinimalRiskAllocation,
     double GrowthAllocation,
     double MinimalRiskReturn,
@@ -93,6 +93,6 @@ public record FiguresForYear(
     
     public double ReturnAmount => MinimalRiskReturnAmount + GrowthReturnAmount;
 
-    public double AmountAtStartOfYear => AmountAtEndOfPriorYear + AnnualContribution;
+    public double AmountAtStartOfYear => AmountAtEndOfPriorYear + NetContribution;
     public double AmountAtEndOfYear => AmountAtStartOfYear + ReturnAmount;
 }

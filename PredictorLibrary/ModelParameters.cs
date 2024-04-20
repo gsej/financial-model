@@ -8,12 +8,25 @@ public class ModelParameters
     
     public double AmountAtStart { get; init; }
     
+    public double AnnualContribution { get; init; }
+    public double AnnualWithdrawal { get; init; }
+    
     // Contribution
     // this is a single value right now, but can be 
     // changed later (e.g. specify contributions for particular year / month
 
     // The annual contribution is assumed to be applied right after the start of the year. 
-    public double AnnualContribution { get; init; }
+    public double NetContribution(int year)
+    {
+        if (year < 12)
+        {
+            return AnnualContribution;
+        }
+        else
+        {
+            return -AnnualWithdrawal;
+        }
+    }
     
     public double GrowthReturnMean { get; init; }
     public double GrowthReturnStandardDeviation { get; set; }
