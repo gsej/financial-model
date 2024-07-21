@@ -30,14 +30,9 @@ class Program
         using (var csv = new CsvWriter(writer, CultureInfo.InvariantCulture, leaveOpen: false))
         {
             csv.Context.RegisterClassMap<FiguresForYearMap>();  
-            csv.WriteRecords(years);
-            
+            csv.WriteRecords(years);            
 //            csv.WriteRecords(predictions);
-            
-            
         }
-
-        
     
         //
         // foreach (var predication in predictions)
@@ -46,7 +41,5 @@ class Program
         // }
         //
         // foreach (var y in predictor.Y)
-
-
     }
 }
