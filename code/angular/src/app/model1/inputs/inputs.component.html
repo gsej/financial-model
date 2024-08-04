@@ -1,0 +1,30 @@
+<p>inputs works!</p>
+
+<form #model1Form="ngForm">
+  <p>
+    <label for="startYear">Start year</label
+    ><input type="text" id="startYear" name="startYear" [(ngModel)]="inputs.startYear" />
+  </p>
+  <p>
+    <label for="ageAtStart">Age at start</label>
+    <input type="text" id="ageAtStart" name="ageAtStart" [(ngModel)]="inputs.ageAtStart" />
+  </p>
+  <p>
+    <label for="endYear">End year</label
+    ><input type="text" id="endYear"  name="endYear" [(ngModel)]="inputs.endYear" />
+  </p>
+  <p>
+    <label for="amountAtStart">Amount at start</label
+    ><input type="text" id="amountAtStart" name="amountAtStart" [(ngModel)]="inputs.amountAtStart" />
+  </p>
+  <p>
+    <label for="annualContribution">Annual contribution</label>
+    <input type="text" id="annualContribution" name="annualContribution" [(ngModel)]="inputs.annualContribution" />
+  </p>
+  <p>
+    <label for="meanAnnualReturn">Mean annual return</label>
+    <input type="text" id="meanAnnualReturn" name="meanAnnualReturn" [(ngModel)]="inputs.meanAnnualReturn" />
+  </p>
+  <button type="button" (click)="calculate()">Calculate</button>
+
+</form>

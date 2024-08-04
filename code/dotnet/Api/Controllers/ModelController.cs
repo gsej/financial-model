@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using PredictorLibrary.Model1;
 
 namespace Api.Controllers;
 
@@ -18,19 +19,22 @@ namespace Api.Controllers;
 // }
 
 [ApiController]
-[Route("[controller]")]
-public class ModelController : ControllerBase
+[Route("api/[controller]")]
+public class Model1Controller : ControllerBase
 {
-    private readonly ILogger<ModelController> _logger;
-  
-    public ModelController(ILogger<ModelController> logger)
+    private readonly ILogger<Model1Controller> _logger;
+    private readonly Predictor _predictor;
+
+    public Model1Controller(ILogger<Model1Controller> logger, Predictor predictor)
     {
         _logger = logger;
+        _predictor = predictor;
     }
 
-    [HttpGet("/hello")]
-    public async Task<string> Hello()
+    [HttpPost]
+    public Model1Prediction GetPrediction([FromBody] Model1Inputs inputs)
     {
-        return "hello";
+        var prediction = _predictor.Generate(inputs);
+        return prediction;
     }
 }
