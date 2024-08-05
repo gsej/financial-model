@@ -10,9 +10,7 @@ export class PredictionService {
 
   constructor(private http: HttpClient) { }
 
-  getModel1Predication(request: Inputs): Observable<Model1Prediction> {
+  getModel1Prediction(request: Inputs): Observable<Model1Prediction> {
     return this.http.post<Model1Prediction>("http://localhost:5100/api/model1", request);
   }
-
-
 }

@@ -18,7 +18,7 @@ export class Model1ContainerComponent {
   constructor(private predictionService: PredictionService) { }
 
   calculate(inputs: Inputs) {
-    this.predictionService.getModel1Predication(inputs).subscribe(prediction => {
+    this.predictionService.getModel1Prediction(inputs).subscribe(prediction => {
       this.prediction = prediction;
     });
   }

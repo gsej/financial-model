@@ -25,6 +25,10 @@
     <label for="meanAnnualReturn">Mean annual return</label>
     <input type="text" id="meanAnnualReturn" name="meanAnnualReturn" [(ngModel)]="inputs.meanAnnualReturn" />
   </p>
+  <p>
+    <label for="targetAge">Target Age</label>
+    <input type="text" id="targetAge" name="targetAge" [(ngModel)]="inputs.targetAge" />
+  </p>
   <button type="button" (click)="calculate()">Calculate</button>
 
 </form>

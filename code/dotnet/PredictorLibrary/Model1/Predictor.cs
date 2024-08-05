@@ -10,22 +10,26 @@ public class Predictor
         
         for (var y = inputs.StartYear; y <= inputs.EndYear; y++)
         {
-            // GSEJ: the rounding shouldn't happen here... but at the end. Perhaps when converting to json. 
-
-            var investmentReturn = amountAtStart * inputs.MeanAnnualReturn;
+            // add the annual contribution to the amount before calculating the investment return.
+            // this pretends that the annual contribution is deposited at the start of each year, which is a simplification.
+            
+            var investmentReturn = (amountAtStart + inputs.AnnualContribution) * inputs.MeanAnnualReturn;
             var year = new Year
             {
                 CalendarYear = y,
                 Age = inputs.AgeAtStart + y - inputs.StartYear,
                 YearIndex = y - inputs.StartYear,
-                AmountAtStart = Math.Round(amountAtStart, 2),
-                AnnualContribution = Math.Round(inputs.AnnualContribution, 2),
-                InvestmentReturn = Math.Round(investmentReturn, 2),
-                AmountAtEnd = Math.Round(amountAtStart + inputs.AnnualContribution + investmentReturn, 2)
+                PriorYear  = amountAtStart, 
+                AmountAtStart = amountAtStart + inputs.AnnualContribution,
+                InvestmentReturn = investmentReturn,
+                AmountAtEnd = amountAtStart + inputs.AnnualContribution + investmentReturn,
             };
             prediction.Years.Add(year);
             amountAtStart = year.AmountAtEnd;
         }
+
+        prediction.TargetAge = inputs.TargetAge;
+        prediction.AmountAtTargetAge = prediction.Years.SingleOrDefault(year => year.Age == inputs.TargetAge)?.AmountAtEnd;
 
         return prediction;   
     }

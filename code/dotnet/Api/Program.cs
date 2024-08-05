@@ -12,6 +12,8 @@ public static class Program
             .AddJsonFile("appsettings.json", optional: true, reloadOnChange: false)
             .AddEnvironmentVariables();
         
+        builder.Services.AddTransient<PredictorLibrary.Model1.Predictor>();
+        
         builder.Services.AddMemoryCache();
 
         builder.Services.AddCors(options =>

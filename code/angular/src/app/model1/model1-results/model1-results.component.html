@@ -1,16 +1,16 @@
 <p>model1-results works!</p>
 
-@if (resultsJson) {
-<div>{{ resultsJson }}</div>
-} @if (prediction) {
+@if (prediction) {
+
+<label>Amount at {{ prediction.targetAge }}: <span>{{ prediction.amountAtTargetAge != null ? (prediction.amountAtTargetAge | moneyAmount) : 'N/A' }}</span></label>
 <table>
   <thead>
     <tr>
       <th>Calendar Year</th>
       <th>Age</th>
       <th>Year Index</th>
+      <th>Prior Year</th>
       <th>Amount at Start</th>
-      <th>Annual Contribution</th>
       <th>Investment Return</th>
       <th>Amount At End</th>
     </tr>
@@ -21,10 +21,10 @@
       <td>{{ year.calendarYear }}</td>
       <td>{{ year.age }}</td>
       <td>{{ year.yearIndex }}</td>
-      <td class="money-amount">{{ year.amountAtStart }}</td>
-      <td class="money-amount">{{ year.annualContribution }}</td>
-      <td>{{ year.investmentReturn }}</td>
-      <td class="money-amount">{{ year.amountAtEnd }}</td>
+      <td class="money-amount">{{ year.priorYear | moneyAmount }}</td>
+      <td class="money-amount">{{ year.amountAtStart | moneyAmount }}</td>
+      <td>{{ year.investmentReturn | moneyAmount }}</td>
+      <td class="money-amount">{{ year.amountAtEnd | moneyAmount }}</td>
     </tr>
     }
   </tbody>
