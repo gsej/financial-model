@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Model1Prediction } from '../inputs';
 import { MoneyAmountPipe } from '../../pipes/money-amount.pipe';
+import { LineChartComponent } from '../line-chart/line-chart.component';
 
 
 @Component({
@@ -13,7 +14,4 @@ import { MoneyAmountPipe } from '../../pipes/money-amount.pipe';
 export class Model1ResultsComponent {
   @Input()
   public prediction: Model1Prediction | undefined = undefined;
-
-
-
 }
