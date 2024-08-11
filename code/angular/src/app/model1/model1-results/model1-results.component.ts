@@ -12,6 +12,7 @@ import { LineChartComponent } from '../line-chart/line-chart.component';
   styleUrl: './model1-results.component.scss'
 })
 export class Model1ResultsComponent {
+
   @Input()
   public prediction: Model1Prediction | undefined = undefined;
 }

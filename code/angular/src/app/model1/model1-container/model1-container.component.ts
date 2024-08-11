@@ -4,11 +4,12 @@ import { Inputs, Model1Prediction, Year } from '../inputs';
 import { PredictionService } from '../../prediction.service';
 import { Model1ResultsComponent } from '../model1-results/model1-results.component';
 import { LineChartComponent } from '../line-chart/line-chart.component';
+import { DownloadJsonComponent } from '../download-json/download-json.component';
 
 @Component({
   selector: 'app-model1-container',
   standalone: true,
-  imports: [InputsComponent, Model1ResultsComponent, LineChartComponent],
+  imports: [InputsComponent, Model1ResultsComponent, LineChartComponent, DownloadJsonComponent],
   templateUrl: './model1-container.component.html',
   styleUrl: './model1-container.component.scss'
 })
