@@ -1,0 +1,8 @@
+{
+  "type": "module",
+  "devDependencies": {
+    "chai": "*",
+    "chai-http": "*",
+    "mocha": "*"
+  }
+}
