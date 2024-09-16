@@ -1,34 +1,106 @@
-<p>inputs works!</p>
-
 <form #model1Form="ngForm">
-  <p>
-    <label for="startYear">Start year</label
-    ><input type="text" id="startYear" name="startYear" [(ngModel)]="inputs.startYear" />
-  </p>
-  <p>
-    <label for="ageAtStart">Age at start</label>
-    <input type="text" id="ageAtStart" name="ageAtStart" [(ngModel)]="inputs.ageAtStart" />
-  </p>
-  <p>
-    <label for="endYear">End year</label
-    ><input type="text" id="endYear"  name="endYear" [(ngModel)]="inputs.endYear" />
-  </p>
-  <p>
-    <label for="amountAtStart">Amount at start</label
-    ><input type="text" id="amountAtStart" name="amountAtStart" [(ngModel)]="inputs.amountAtStart" />
-  </p>
-  <p>
-    <label for="annualContribution">Annual contribution</label>
-    <input type="text" id="annualContribution" name="annualContribution" [(ngModel)]="inputs.annualContribution" />
-  </p>
-  <p>
-    <label for="meanAnnualReturn">Mean annual return</label>
-    <input type="text" id="meanAnnualReturn" name="meanAnnualReturn" [(ngModel)]="inputs.meanAnnualReturn" />
-  </p>
-  <p>
-    <label for="targetAge">Target Age</label>
-    <input type="text" id="targetAge" name="targetAge" [(ngModel)]="inputs.targetAge" />
-  </p>
-  <button type="button" (click)="calculate()">Calculate</button>
+  <app-card class="h-96">
+    <app-card-header>
+      <div class="flex flex-row items-center justify-between pb-0">
+        <app-card-title class="text-lg font-bold">Model Inputs</app-card-title>
+      </div>
+    </app-card-header>
+    <app-separator class="mt-2 mb-4" />
+    <app-card-content>
+      <div class="flex justify-between gap-4">
+        <div class="flex-1">
+          <p>
+            <app-formlabel for="startYear">Start Year</app-formlabel>
+            <app-input
+              class="max-w-xs"
+              type="text"
+              id="startYear"
+              name="startYear"
+              [(ngModel)]="inputs.startYear"
+            />
+          </p>
+          <p>
+            <app-formlabel for="ageAtStart">Age At Start</app-formlabel>
+            <app-input
+              class="max-w-xs"
+              type="text"
+              id="ageAtStart"
+              name="ageAtStart"
+              [(ngModel)]="inputs.ageAtStart"
+            />
+          </p>
+          <p>
+            <app-formlabel for="endYear">End Year</app-formlabel>
+            <app-input
+              class="max-w-xs"
+              type="text"
+              id="endYear"
+              name="endYear"
+              [(ngModel)]="inputs.endYear"
+            />
+          </p>
+          <p>
+            <app-formlabel for="targetAge">Target Age</app-formlabel>
+            <app-input
+              class="max-w-xs"
+              type="text"
+              id="targetAge"
+              name="targetAge"
+              [(ngModel)]="inputs.targetAge"
+            />
+          </p>
+        </div>
+
+        <div class="flex-1" >
+          <p>
+            <app-formlabel for="amountAtStart">Amount At Start</app-formlabel>
+            <app-input
+              class="max-w-xs"
+              type="text"
+              id="amountAtStart"
+              name="amountAtStart"
+              [(ngModel)]="inputs.amountAtStart"
+            />
+          </p>
+          <p>
+            <app-formlabel for="annualContribution">Annual Contribution</app-formlabel>
+            <app-input
+              class="max-w-xs"
+              type="text"
+              id="annualContribution"
+              name="annualContribution"
+              [(ngModel)]="inputs.annualContribution"
+            />
+          </p>
+          <p>
+            <app-formlabel for="meanAnnualReturn">Mean annual return</app-formlabel>
+            <app-input
+              class="max-w-xs"
+              type="text"
+              id="meanAnnualReturn"
+              name="meanAnnualReturn"
+              [(ngModel)]="inputs.meanAnnualReturn"
+            />
+          </p>
+          <p>
+            <app-button class="my-7" (click)="calculate()">Calculate</app-button>
+          </p>
+        </div>
+      </div>
+
+      <!-- <span class="text-gray-600">Investments</span>
+        <span class="text-gray-600">{{
+          formatCurrency(portfolio?.totalInvestmentsInGbp)
+        }}</span>
+      </div>
+      <div class="flex justify-between">
+        <span class="text-gray-600">Cash Balance</span>
+        <span class="text-gray-600">{{
+          formatCurrency(portfolio?.cashBalanceInGbp)
+        }}</span>
+      </div> -->
+    </app-card-content>
+  </app-card>
+
 
 </form>

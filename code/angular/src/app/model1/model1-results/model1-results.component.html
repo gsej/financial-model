@@ -1,9 +1,40 @@
-<p>model1-results works!</p>
-
 @if (prediction) {
 
-<label>Amount at {{ prediction.targetAge }}: <span>{{ prediction.amountAtTargetAge != null ? (prediction.amountAtTargetAge | moneyAmount) : 'N/A' }}</span></label>
-<table>
+  <label>Amount at {{ prediction.targetAge }}: <span>{{ prediction.amountAtTargetAge != null ?  formatCurrency(prediction.amountAtTargetAge) : 'N/A' }}</span></label>
+  <div class="relative w-full overflow-auto">
+
+  <table class="w-full caption-bottom text-sm">
+    <thead class="border-b">
+      <tr class="">
+        <th class="h-12 px-4 text-left align-middle font-medium text-muted-foreground [&:has([role=checkbox])]:pr-0">Calendar Year</th>
+        <th class="h-12 px-4 text-left align-middle font-medium text-muted-foreground [&:has([role=checkbox])]:pr-0">Age</th>
+        <th class="h-12 px-4 text-left align-middle font-medium text-muted-foreground [&:has([role=checkbox])]:pr-0">Year Index</th>
+        <th class="h-12 px-4 text-left align-middle font-medium text-muted-foreground [&:has([role=checkbox])]:pr-0">Prior Year</th>
+        <th class="h-12 px-4 text-left align-middle font-medium text-muted-foreground [&:has([role=checkbox])]:pr-0">Amount At Start</th>
+        <th class="h-12 px-4 text-left align-middle font-medium text-muted-foreground [&:has([role=checkbox])]:pr-0">Investment Return</th>
+        <th class="h-12 px-4 text-left align-middle font-medium text-muted-foreground [&:has([role=checkbox])]:pr-0">Amount At End</th>
+    </tr>
+    </thead>
+    <tbody>
+      @for (year of prediction.years; track year) {
+        <tr class="border-b hover:bg-muted/50">
+          <td class="p-4 align-middle text-gray-600">{{ year.calendarYear }}</td>
+          <td class="p-4 align-middle text-gray-600">{{ year.age }}</td>
+          <td class="p-4 align-middle text-gray-600">{{ year.yearIndex }}</td>
+          <td class="p-4 align-middle text-gray-600">{{ formatCurrency(year.priorYear) }}</td>
+          <td class="p-4 align-middle text-gray-600">{{ formatCurrency(year.amountAtStart) }}</td>
+          <td class="p-4 align-middle text-gray-600">{{ formatCurrency(year.investmentReturn) }}</td>
+          <td class="p-4 align-middle text-gray-600">{{ formatCurrency(year.amountAtEnd) }}</td>
+        </tr>
+      }
+    </tbody>
+    <tfoot class="bg-primary font-medium text-primary-foreground"></tfoot>
+  </table>
+
+  </div>
+}
+
+<!-- <table class="relative w-full overflow-auto>
   <thead>
     <tr>
       <th>Calendar Year</th>
@@ -18,13 +49,7 @@
   <tbody>
     @for (year of prediction.years; track year) {
     <tr>
-      <td>{{ year.calendarYear }}</td>
-      <td>{{ year.age }}</td>
-      <td>{{ year.yearIndex }}</td>
-      <td class="money-amount">{{ year.priorYear | moneyAmount }}</td>
-      <td class="money-amount">{{ year.amountAtStart | moneyAmount }}</td>
-      <td>{{ year.investmentReturn | moneyAmount }}</td>
-      <td class="money-amount">{{ year.amountAtEnd | moneyAmount }}</td>
+
     </tr>
     }
   </tbody>
@@ -32,4 +57,4 @@
 
 }
 
-
+ -->
