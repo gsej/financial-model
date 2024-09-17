@@ -114,7 +114,7 @@ public class PredictorTests
         {
             StartYear = 2020,
             AgeAtStart = 30,
-            AgeAtStart = 30,
+            //AgeAtStart = 30,
             EndYear = 2100,
             AmountAtStart = 1000,
             AnnualContribution = 1000,

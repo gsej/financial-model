@@ -1,9 +1,8 @@
-<app-inputs (onCalculate)="calculate($event)"></app-inputs>
+<app-header class="mb-2">Model 1</app-header>
+<div class="grid grid-cols-2 pt-0">
+  <app-inputs (onCalculate)="calculate($event)"></app-inputs>
+  <app-line-chart [prediction]="prediction"></app-line-chart>
+</div>
 <app-model1-results [prediction]="prediction"></app-model1-results>
-
-
-
-
-<!-- <app-line-chart [years]="years" [values]="values"></app-line-chart> -->
 
 <!-- <app-download-json></app-download-json> -->

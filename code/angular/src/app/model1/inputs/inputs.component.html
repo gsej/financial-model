@@ -1,11 +1,5 @@
 <form #model1Form="ngForm">
-  <app-card class="h-96">
-    <app-card-header>
-      <div class="flex flex-row items-center justify-between pb-0">
-        <app-card-title class="text-lg font-bold">Model Inputs</app-card-title>
-      </div>
-    </app-card-header>
-    <app-separator class="mt-2 mb-4" />
+  <app-card class="h-72">
     <app-card-content>
       <div class="flex justify-between gap-4">
         <div class="flex-1">
@@ -16,8 +10,7 @@
               type="text"
               id="startYear"
               name="startYear"
-              [(ngModel)]="inputs.startYear"
-            />
+              [(ngModel)]="inputs.startYear" />
           </p>
           <p>
             <app-formlabel for="ageAtStart">Age At Start</app-formlabel>
@@ -26,8 +19,7 @@
               type="text"
               id="ageAtStart"
               name="ageAtStart"
-              [(ngModel)]="inputs.ageAtStart"
-            />
+              [(ngModel)]="inputs.ageAtStart" />
           </p>
           <p>
             <app-formlabel for="endYear">End Year</app-formlabel>
@@ -36,8 +28,7 @@
               type="text"
               id="endYear"
               name="endYear"
-              [(ngModel)]="inputs.endYear"
-            />
+              [(ngModel)]="inputs.endYear" />
           </p>
           <p>
             <app-formlabel for="targetAge">Target Age</app-formlabel>
@@ -46,8 +37,7 @@
               type="text"
               id="targetAge"
               name="targetAge"
-              [(ngModel)]="inputs.targetAge"
-            />
+              [(ngModel)]="inputs.targetAge" />
           </p>
         </div>
 
@@ -59,8 +49,7 @@
               type="text"
               id="amountAtStart"
               name="amountAtStart"
-              [(ngModel)]="inputs.amountAtStart"
-            />
+              [(ngModel)]="inputs.amountAtStart" />
           </p>
           <p>
             <app-formlabel for="annualContribution">Annual Contribution</app-formlabel>
@@ -69,8 +58,7 @@
               type="text"
               id="annualContribution"
               name="annualContribution"
-              [(ngModel)]="inputs.annualContribution"
-            />
+              [(ngModel)]="inputs.annualContribution" />
           </p>
           <p>
             <app-formlabel for="meanAnnualReturn">Mean annual return</app-formlabel>
@@ -79,28 +67,13 @@
               type="text"
               id="meanAnnualReturn"
               name="meanAnnualReturn"
-              [(ngModel)]="inputs.meanAnnualReturn"
-            />
+              [(ngModel)]="inputs.meanAnnualReturn" />
           </p>
           <p>
-            <app-button class="my-7" (click)="calculate()">Calculate</app-button>
+            <app-button class="my-7" (click)="calculate()">Recalculate</app-button>
           </p>
         </div>
       </div>
-
-      <!-- <span class="text-gray-600">Investments</span>
-        <span class="text-gray-600">{{
-          formatCurrency(portfolio?.totalInvestmentsInGbp)
-        }}</span>
-      </div>
-      <div class="flex justify-between">
-        <span class="text-gray-600">Cash Balance</span>
-        <span class="text-gray-600">{{
-          formatCurrency(portfolio?.cashBalanceInGbp)
-        }}</span>
-      </div> -->
     </app-card-content>
   </app-card>
-
-
 </form>
