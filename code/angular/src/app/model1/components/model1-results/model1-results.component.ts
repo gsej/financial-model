@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core';
-import { Model1Prediction } from '../inputs';
 
-import { formatCurrency, formatPercentage, formatQuantity } from '../../utils/formatters';
+import { formatCurrency, formatPercentage, formatQuantity } from '../../../utils/formatters';
 import { CommonModule } from '@angular/common';
+import { Model1Prediction } from '../../models/Model1Prediction';
 
 
 @Component({

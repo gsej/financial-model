@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { Model1ContainerComponent } from './model1/model1-container/model1-container.component';
+import { Model1ContainerComponent } from './model1/components/model1-container/model1-container.component';
 
 @Component({
   selector: 'app-root',
@@ -14,4 +14,17 @@ import { Model1ContainerComponent } from './model1/model1-container/model1-conta
 })
 export class AppComponent {
   title = 'pension-predictor';
+
+
+
+
+
+   public changeModel(event: any) {
+    console.log("model changed to " + event.target.value);
+   }
+
+
+
+
+
 }

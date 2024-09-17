@@ -1,19 +1,19 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
-import Chart, { elements, registerables } from 'chart.js/auto';
+import Chart from 'chart.js/auto';
 import annotationPlugin from 'chartjs-plugin-annotation';
-import { Model1Prediction } from '../inputs';
-import { formatCurrency } from '../../utils/formatters';
+import { Model1Prediction } from '../../models/Model1Prediction';
+import { formatCurrency } from '../../../utils/formatters';
 
 Chart.register(annotationPlugin);
 
 @Component({
-  selector: 'app-line-chart',
+  selector: 'app-model1-chart',
   standalone: true,
   imports: [],
-  templateUrl: './line-chart.component.html',
-  styleUrl: './line-chart.component.scss'
+  templateUrl: './model1-chart.component.html',
+  styleUrl: './model1-chart.component.scss'
 })
-export class LineChartComponent implements OnChanges {
+export class Model1ChartComponent implements OnChanges {
 
   public chart: any;
 

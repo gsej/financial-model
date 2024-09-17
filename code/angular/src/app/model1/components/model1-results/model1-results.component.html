@@ -13,7 +13,7 @@
         </tr>
       </thead>
       <tbody>
-        @for (year of prediction.years; track year) {
+        @for (year of prediction.years; track year.yearIndex) {
           <tr class="border-b hover:bg-muted/50" [ngClass]="{'bg-custom-green': prediction.targetAge === year.age}">
             <td class="p-4 text-center text-gray-600">{{ year.calendarYear }}</td>
             <td class="p-4 text-center text-gray-600">{{ year.age }}</td>
