@@ -14,7 +14,14 @@
       <div class="flex-1 overflow-y-auto">
         <!-- application shell -->
         <div class="grid items-start gap-8 p-6">
-          <app-model1-container></app-model1-container>
+          @if (model === 'model1') {
+            <app-model1-container></app-model1-container>
+          }
+
+          @if (model === 'model2') {
+            <app-model2-container></app-model2-container>
+          }
+
         </div>
       </div>
     </main>

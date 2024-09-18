@@ -1,0 +1,44 @@
+<form #model2Form="ngForm">
+  <app-card class="h-72">
+    <app-card-content>
+      <div class="flex justify-between gap-4">
+        <div class="flex-1">
+          <p>
+            <app-formlabel for="startYear">Start Year</app-formlabel>
+            <app-input class="max-w-xs" type="text" id="startYear" name="startYear" [(ngModel)]="inputs.startYear" />
+          </p>
+          <p>
+            <app-formlabel for="ageAtStart">Age At Start</app-formlabel>
+            <app-input class="max-w-xs" type="text" id="ageAtStart" name="ageAtStart" [(ngModel)]="inputs.ageAtStart" />
+          </p>
+          <p>
+            <app-formlabel for="endYear">End Year</app-formlabel>
+            <app-input class="max-w-xs" type="text" id="endYear" name="endYear" [(ngModel)]="inputs.endYear" />
+          </p>
+          <p>
+            <app-formlabel for="targetAge">Target Age</app-formlabel>
+            <app-input class="max-w-xs" type="text" id="targetAge" name="targetAge" [(ngModel)]="inputs.targetAge" />
+          </p>
+        </div>
+
+        <div class="flex-1">
+          <p>
+            <app-formlabel for="amountAtStart">Amount At Start</app-formlabel>
+            <app-input class="max-w-xs" type="text" id="amountAtStart" name="amountAtStart" [(ngModel)]="inputs.amountAtStart" />
+          </p>
+          <p>
+            <app-formlabel for="annualContribution">Annual Contribution</app-formlabel>
+            <app-input class="max-w-xs" type="text" id="annualContribution" name="annualContribution" [(ngModel)]="inputs.annualContribution" />
+          </p>
+          <p>
+            <app-formlabel for="meanAnnualReturn">Mean annual return</app-formlabel>
+            <app-input class="max-w-xs" type="text" id="meanAnnualReturn" name="meanAnnualReturn" [(ngModel)]="inputs.meanAnnualReturn" />
+          </p>
+          <p>
+            <app-button class="my-7" (click)="calculate()">Recalculate</app-button>
+          </p>
+        </div>
+      </div>
+    </app-card-content>
+  </app-card>
+</form>
