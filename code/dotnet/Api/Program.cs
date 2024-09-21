@@ -1,3 +1,4 @@
+using System.Reflection;
 using Api.Controllers;
 
 namespace Api;
@@ -31,7 +32,7 @@ public static class Program
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen(s =>
         {
-//            s.SchemaFilter<ExampleSchemaFilter>();
+            s.SchemaFilter<Model1Controller.Model1Example>();
             s.CustomSchemaIds(x => x.FullName);
         });
 

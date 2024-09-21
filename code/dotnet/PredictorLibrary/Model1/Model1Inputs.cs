@@ -8,6 +8,5 @@ public class Model1Inputs {
     public decimal AmountAtStart { get; set; }
     public decimal AnnualContribution { get; set; }
     public decimal MeanAnnualReturn { get; set; }
-    
     public int TargetAge { get; set; }
 }

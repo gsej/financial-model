@@ -5,6 +5,7 @@ module.exports = defineConfig({
     baseUrl: "http://localhost:5200",
     specPattern: "tests/**/*.cy.mjs",
     supportFile: false,
+    screenshotOnRunFailure: true,
     setupNodeEvents(on, config) {
       // implement node event listeners here
     },
