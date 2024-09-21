@@ -30,6 +30,9 @@ export class InputComponent implements ControlValueAccessor {
   name: string = '';
 
   @Input()
+  tabOrder: string = '';
+
+  @Input()
   ngModel: any;
 
   @Output()

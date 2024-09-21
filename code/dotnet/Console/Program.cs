@@ -18,7 +18,7 @@ class Program
         var modelParameters = new ModelParameters();
         config.Bind("ModelParameters", modelParameters);
 
-        var predictor = new Predictor(modelParameters);
+        var predictor = new Model1Predictor(modelParameters);
         var predictions = predictor.Predict(1000);
 
         var finalModel = predictor.Model;

@@ -10,11 +10,13 @@ import { FormLabelComponent } from '../../../components/form/form-label.componen
 import { InputComponent } from '../../../components/form/input.component';
 import { SeparatorComponent } from '../../../components/separator/separator.component';
 import { Model2Inputs } from '../../models/Model2Inputs';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-model2-inputs',
   standalone: true,
   imports: [
+    CommonModule,
     FormsModule,
     FormLabelComponent,
     InputComponent,
@@ -38,7 +40,6 @@ export class Model2InputsComponent implements OnInit {
   public onCalculate = new EventEmitter<Model2Inputs>();
 
   constructor() {
-
     this.store = localforage.createInstance({
       name: "model2"
     });
@@ -51,7 +52,6 @@ export class Model2InputsComponent implements OnInit {
     })
   }
 
-
   ngOnInit(): void {
     this.calculate();
   }
@@ -63,7 +63,8 @@ export class Model2InputsComponent implements OnInit {
     }
   }
 
-  useDefaults() {
-    // this.onCalculate.next(this.inputs);
+  reset() {
+    this.inputs = new Model2Inputs();
+    this.calculate();
   }
 }

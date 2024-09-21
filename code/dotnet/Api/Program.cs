@@ -13,7 +13,8 @@ public static class Program
             .AddJsonFile("appsettings.json", optional: true, reloadOnChange: false)
             .AddEnvironmentVariables();
         
-        builder.Services.AddTransient<PredictorLibrary.Model1.Predictor>();
+        builder.Services.AddTransient<PredictorLibrary.Model1.Model1Predictor>();
+        builder.Services.AddTransient<PredictorLibrary.Model2.Model2Predictor>();
         
         builder.Services.AddMemoryCache();
 

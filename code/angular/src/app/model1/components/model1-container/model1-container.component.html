@@ -1,19 +1,10 @@
 <app-header class="mb-2">Model 1</app-header>
 <div class="grid grid-cols-2 pt-0">
-  <app-model1-inputs (onCalculate)="calculate($event)"></app-model1-inputs>
-  <app-model1-chart [prediction]="prediction"></app-model1-chart>
+  <div class="flex flex-col">
+    <app-model1-inputs (onCalculate)="calculate($event)"></app-model1-inputs>
+  </div>
+  <div class="flex flex-col">
+    <app-model1-chart class="h-full" [prediction]="prediction"></app-model1-chart>
+  </div>
 </div>
 <app-model1-results [prediction]="prediction"></app-model1-results>
-
-
-<!--
-
-
-  The first model is based on
-
-
-  https://www.youtube.com/watch?v=1LUIQa5hgMg
-
-  and is a simple compounding model based on a starting amount, a yearly contribution and a fixed rate of return
-
--->

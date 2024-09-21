@@ -1,5 +1,3 @@
-
-
 export class Model1Year {
     calendarYear!: number;
     age!: number;

@@ -5,72 +5,41 @@
         <div class="flex-1">
           <p>
             <app-formlabel for="startYear">Start Year</app-formlabel>
-            <app-input
-              class="max-w-xs"
-              type="text"
-              id="startYear"
-              name="startYear"
-              [(ngModel)]="inputs.startYear" />
+            <app-input tabOrder="1" class="max-w-xs" type="text" id="startYear" name="startYear" [(ngModel)]="inputs.startYear" />
           </p>
           <p>
             <app-formlabel for="ageAtStart">Age At Start</app-formlabel>
-            <app-input
-              class="max-w-xs"
-              type="text"
-              id="ageAtStart"
-              name="ageAtStart"
-              [(ngModel)]="inputs.ageAtStart" />
+            <app-input tabOrder="3" class="max-w-xs" type="text" id="ageAtStart" name="ageAtStart" [(ngModel)]="inputs.ageAtStart" />
           </p>
-          <p>
-            <app-formlabel for="endYear">End Year</app-formlabel>
-            <app-input
-              class="max-w-xs"
-              type="text"
-              id="endYear"
-              name="endYear"
-              [(ngModel)]="inputs.endYear" />
-          </p>
-          <p>
-            <app-formlabel for="targetAge">Target Age</app-formlabel>
-            <app-input
-              class="max-w-xs"
-              type="text"
-              id="targetAge"
-              name="targetAge"
-              [(ngModel)]="inputs.targetAge" />
-          </p>
-        </div>
-
-        <div class="flex-1" >
           <p>
             <app-formlabel for="amountAtStart">Amount At Start</app-formlabel>
-            <app-input
-              class="max-w-xs"
-              type="text"
-              id="amountAtStart"
-              name="amountAtStart"
+            <app-input tabOrder="5" class="max-w-xs" type="text" id="amountAtStart" name="amountAtStart"
               [(ngModel)]="inputs.amountAtStart" />
           </p>
           <p>
-            <app-formlabel for="annualContribution">Annual Contribution</app-formlabel>
-            <app-input
-              class="max-w-xs"
-              type="text"
-              id="annualContribution"
-              name="annualContribution"
-              [(ngModel)]="inputs.annualContribution" />
-          </p>
-          <p>
             <app-formlabel for="meanAnnualReturn">Mean annual return</app-formlabel>
-            <app-input
-              class="max-w-xs"
-              type="text"
-              id="meanAnnualReturn"
-              name="meanAnnualReturn"
+            <app-input tabOrder="7" class="max-w-xs" type="text" id="meanAnnualReturn" name="meanAnnualReturn"
               [(ngModel)]="inputs.meanAnnualReturn" />
           </p>
+        </div>
+
+        <div class="flex-1">
           <p>
-            <app-button class="my-7" (click)="calculate()">Recalculate</app-button>
+            <app-formlabel for="endYear">End Year</app-formlabel>
+            <app-input tabOrder="2" class="max-w-xs" type="text" id="endYear" name="endYear" [(ngModel)]="inputs.endYear" />
+          </p>
+          <p>
+            <app-formlabel for="targetAge">Target Age</app-formlabel>
+            <app-input tabOrder="4" class="max-w-xs" type="text" id="targetAge" name="targetAge" [(ngModel)]="inputs.targetAge" />
+          </p>
+          <p>
+            <app-formlabel for="annualContribution">Annual Contribution</app-formlabel>
+            <app-input tabOrder="6" class="max-w-xs" type="text" id="annualContribution" name="annualContribution"
+              [(ngModel)]="inputs.annualContribution" />
+          </p>
+          <p class="max-w-xs text-right">
+            <app-button [variant]="'secondary'" class="w-28 my-7 px-2" (click)="reset()">Reset</app-button>
+            <app-button class="w-28 my-7" (click)="calculate()">Recalculate</app-button>
           </p>
         </div>
       </div>

@@ -1,0 +1,4 @@
+add validation to ensure allocations add up to 100%
+add validation to make sure number of years entered isn't crazy (before making public)
+
+# model 3

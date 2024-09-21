@@ -1,7 +1,7 @@
 
 
 <!-- very crude selector for now -->
-<select (change)="changeModel($event)">
+<select [value]="model" (change)="changeModel($event)">
   <option value="model1">Model1</option>
   <option value="model2">Model2</option>
 </select>

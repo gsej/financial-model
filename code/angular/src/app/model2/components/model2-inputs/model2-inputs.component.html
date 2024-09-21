@@ -1,41 +1,68 @@
 <form #model2Form="ngForm">
-  <app-card class="h-72">
+  <app-card>
     <app-card-content>
       <div class="flex justify-between gap-4">
         <div class="flex-1">
           <p>
             <app-formlabel for="startYear">Start Year</app-formlabel>
-            <app-input class="max-w-xs" type="text" id="startYear" name="startYear" [(ngModel)]="inputs.startYear" />
+            <app-input tabOrder="1" class="max-w-xs" type="text" id="startYear" name="startYear"
+              [(ngModel)]="inputs.startYear" />
           </p>
           <p>
             <app-formlabel for="ageAtStart">Age At Start</app-formlabel>
-            <app-input class="max-w-xs" type="text" id="ageAtStart" name="ageAtStart" [(ngModel)]="inputs.ageAtStart" />
+            <app-input tabOrder="3" class="max-w-xs" type="text" id="ageAtStart" name="ageAtStart"
+              [(ngModel)]="inputs.ageAtStart" />
           </p>
           <p>
-            <app-formlabel for="endYear">End Year</app-formlabel>
-            <app-input class="max-w-xs" type="text" id="endYear" name="endYear" [(ngModel)]="inputs.endYear" />
-          </p>
-          <p>
-            <app-formlabel for="targetAge">Target Age</app-formlabel>
-            <app-input class="max-w-xs" type="text" id="targetAge" name="targetAge" [(ngModel)]="inputs.targetAge" />
+            <app-formlabel for="amountAtStart">Amount At Start</app-formlabel>
+            <app-input tabOrder="5" class="max-w-xs" type="text" id="amountAtStart" name="amountAtStart"
+              [(ngModel)]="inputs.amountAtStart" />
           </p>
         </div>
 
         <div class="flex-1">
           <p>
-            <app-formlabel for="amountAtStart">Amount At Start</app-formlabel>
-            <app-input class="max-w-xs" type="text" id="amountAtStart" name="amountAtStart" [(ngModel)]="inputs.amountAtStart" />
+            <app-formlabel for="endYear">End Year</app-formlabel>
+            <app-input tabOrder="2" class="max-w-xs" type="text" id="endYear" name="endYear"
+              [(ngModel)]="inputs.endYear" />
           </p>
+          <p>
+            <app-formlabel for="targetAge">Target Age</app-formlabel>
+            <app-input tabOrder="4" class="max-w-xs" type="text" id="targetAge" name="targetAge"
+              [(ngModel)]="inputs.targetAge" />
+          </p>
+
           <p>
             <app-formlabel for="annualContribution">Annual Contribution</app-formlabel>
-            <app-input class="max-w-xs" type="text" id="annualContribution" name="annualContribution" [(ngModel)]="inputs.annualContribution" />
+            <app-input tabOrder="6" class="max-w-xs" type="text" id="annualContribution" name="annualContribution"
+              [(ngModel)]="inputs.annualContribution" />
+          </p>
+        </div>
+      </div>
+
+      <div class="flex justify-between gap-4">
+        @for (allocation of inputs.allocations; track allocation; let i = $index) {
+        <div class="flex-1">
+          <p>
+            <app-formlabel [for]="'proportion' + i">Proportion ({{ allocation.name }})</app-formlabel>
+            <app-input [tabOrder]="(7 + i).toString()" class="max-w-xs" type="text" [id]="'proportion' + i"
+              [name]="'proportion' + i" [(ngModel)]="allocation.proportion" />
           </p>
           <p>
-            <app-formlabel for="meanAnnualReturn">Mean annual return</app-formlabel>
-            <app-input class="max-w-xs" type="text" id="meanAnnualReturn" name="meanAnnualReturn" [(ngModel)]="inputs.meanAnnualReturn" />
+            <app-formlabel [for]="'meanAnnualReturn' + i">Mean Annual Return ({{ allocation.name }}) </app-formlabel>
+            <app-input [tabOrder]="(9 + i).toString()" class="max-w-xs" type="text" [id]="'meanAnnualReturn' + i"
+              [name]="'meanAnnualReturn' + i" [(ngModel)]="allocation.meanAnnualReturn" />
           </p>
-          <p>
-            <app-button class="my-7" (click)="calculate()">Recalculate</app-button>
+        </div>
+        }
+      </div>
+
+      <div class="flex justify-between gap-4">
+        <div class="flex-1"></div>
+        <div class="flex-1">
+          <p class="max-w-xs text-right">
+            <app-button [variant]="'secondary'" class="w-28 my-7 px-2" (click)="reset()">Reset</app-button>
+            <app-button class="w-28 my-7" (click)="calculate()">Recalculate</app-button>
           </p>
         </div>
       </div>

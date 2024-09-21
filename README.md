@@ -18,5 +18,3 @@ are pretty close.
 ## Model 1
 
 This is a simple model which assumes a single portfolio with a fixed annual growth rate. It's based on part 1 of the video series: [https://www.youtube.com/watch?v=1LUIQa5hgMg](https://www.youtube.com/watch?v=1LUIQa5hgMg)
-
-

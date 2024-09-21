@@ -1,6 +1,6 @@
-namespace PredictorLibrary.Model1;
+namespace PredictorLibrary.Model1.Outputs;
 
-public class Year
+public class Model1Year
 {
     public int CalendarYear { get; set; }
     public int Age { get; set; }
@@ -8,6 +8,5 @@ public class Year
     public decimal PriorYear { get; set; }
     public decimal AmountAtStart { get; set; }
     public decimal InvestmentReturn { get; set; }
-    public decimal AmountAtEnd { get; set; }
-
+    public decimal AmountAtEnd => AmountAtStart + InvestmentReturn;
 }

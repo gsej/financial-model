@@ -1,11 +1,12 @@
 using FluentAssertions;
 using PredictorLibrary.Model1;
+using PredictorLibrary.Model1.Inputs;
 
 namespace Tests.Model1;
 
-public class PredictorTests
+public class Model1PredictorTests
 {
-    private readonly Predictor _predictor = new ();
+    private readonly Model1Predictor _model1Predictor = new ();
     
     [Fact]
     public void Generate_GeneratesCorrectYearValues()
@@ -21,7 +22,7 @@ public class PredictorTests
         };
         
         // act
-        var prediction = _predictor.Generate(inputs);
+        var prediction = _model1Predictor.Generate(inputs);
         
         // assert
         prediction.Years.ElementAt(0).CalendarYear.Should().Be(2020);
@@ -51,7 +52,7 @@ public class PredictorTests
         };
         
         // act
-        var prediction = _predictor.Generate(inputs);
+        var prediction = _model1Predictor.Generate(inputs);
         
         // assert
         prediction.Years.Should().AllSatisfy(year => year.InvestmentReturn.Should().Be(0));
@@ -71,7 +72,7 @@ public class PredictorTests
         };
         
         // act
-        var prediction = _predictor.Generate(inputs);
+        var prediction = _model1Predictor.Generate(inputs);
         
         // assert
         prediction.Years.ElementAt(0).PriorYear.Should().Be(inputs.AmountAtStart);
@@ -98,7 +99,7 @@ public class PredictorTests
         };
         
         // act
-        var prediction = _predictor.Generate(inputs);
+        var prediction = _model1Predictor.Generate(inputs);
         
         // assert
         foreach (var year in prediction.Years)
@@ -114,7 +115,6 @@ public class PredictorTests
         {
             StartYear = 2020,
             AgeAtStart = 30,
-            //AgeAtStart = 30,
             EndYear = 2100,
             AmountAtStart = 1000,
             AnnualContribution = 1000,
@@ -122,10 +122,36 @@ public class PredictorTests
             TargetAge = 67
         };
         // act
-        var prediction = _predictor.Generate(inputs);
+        var prediction = _model1Predictor.Generate(inputs);
         
         // assert
         prediction.TargetAge.Should().Be(inputs.TargetAge);
         prediction.AmountAtTargetAge.Should().Be(prediction.Years.Single(year => year.Age == inputs.TargetAge).AmountAtEnd);
+    }
+    
+    [Fact]
+    public void Generate_ShouldCalculateInvestmentReturn()
+    {
+        var inputs = new Model1Inputs
+        {
+            StartYear = 2020,
+            AgeAtStart = 30,
+            EndYear = 2023,
+            AmountAtStart = 1000,
+            AnnualContribution = 1000,
+            MeanAnnualReturn = 0.05m
+        };
+        // act
+        var prediction = _model1Predictor.Generate(inputs);
+        
+        // assert
+        prediction.Years.ElementAt(0).InvestmentReturn.Should().Be(100);
+        prediction.Years.ElementAt(0).AmountAtEnd.Should().Be(2100);
+        
+        prediction.Years.ElementAt(1).InvestmentReturn.Should().Be(155);
+        prediction.Years.ElementAt(1).AmountAtEnd.Should().Be(3255);
+        
+        prediction.Years.ElementAt(2).InvestmentReturn.Should().Be(212.75m);
+        prediction.Years.ElementAt(2).AmountAtEnd.Should().Be(4467.75m);
     }
 }

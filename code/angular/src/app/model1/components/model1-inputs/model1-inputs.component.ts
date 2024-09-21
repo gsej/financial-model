@@ -63,7 +63,8 @@ export class Model1InputsComponent implements OnInit {
     }
   }
 
-  useDefaults() {
-    // this.onCalculate.next(this.inputs);
+  reset() {
+    this.inputs = new Model1Inputs();
+    this.calculate();
   }
 }

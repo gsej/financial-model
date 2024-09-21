@@ -1,36 +1,36 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.OpenApi.Any;
 using Microsoft.OpenApi.Models;
-using PredictorLibrary.Model1;
-using PredictorLibrary.Model1.Inputs;
-using PredictorLibrary.Model1.Outputs;
+using PredictorLibrary.Model2;
+using PredictorLibrary.Model2.Inputs;
+using PredictorLibrary.Model2.Outputs;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
 namespace Api.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public class Model1Controller : ControllerBase
+public class Model2Controller : ControllerBase
 {
-    private readonly Model1Predictor _model1Predictor;
+    private readonly Model2Predictor _model2Predictor;
 
-    public Model1Controller(Model1Predictor model1Predictor)
+    public Model2Controller(Model2Predictor model1Predictor)
     {
-        _model1Predictor = model1Predictor;
+        _model2Predictor = model1Predictor;
     }
 
     [HttpPost]
-    public Model1Prediction GetPrediction([FromBody] Model1Inputs inputs)
+    public Model2Prediction GetPrediction([FromBody] Model2Inputs inputs)
     {
-        var prediction = _model1Predictor.Generate(inputs);
+        var prediction = _model2Predictor.Generate(inputs);
         return prediction;
     }
     
-    public class Model1Example : ISchemaFilter
+    public class Model2Example : ISchemaFilter
     {
         public void Apply(OpenApiSchema schema, SchemaFilterContext context)
         {
-            if (context.Type == typeof(Model1Inputs))
+            if (context.Type == typeof(Model2Inputs))
             {
                 schema.Example = new OpenApiObject()
                 {

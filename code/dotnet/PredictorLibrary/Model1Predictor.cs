@@ -1,6 +1,6 @@
 namespace PredictorLibrary;
 
-public class Predictor
+public class Model1Predictor
 {
     private readonly ModelParameters _modelParameters;
     
@@ -8,7 +8,7 @@ public class Predictor
     
     public PensionModel Model => _model;
 
-    public Predictor(ModelParameters modelParameters)
+    public Model1Predictor(ModelParameters modelParameters)
     {
         _modelParameters = modelParameters;
     }
