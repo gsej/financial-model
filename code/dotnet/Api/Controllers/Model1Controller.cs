@@ -12,20 +12,14 @@ namespace Api.Controllers;
 [Route("api/[controller]")]
 public class Model1Controller : ControllerBase
 {
-    private readonly Model1Predictor _model1Predictor;
-
-    public Model1Controller(Model1Predictor model1Predictor)
-    {
-        _model1Predictor = model1Predictor;
-    }
-
     [HttpPost]
     public Model1Prediction GetPrediction([FromBody] Model1Inputs inputs)
     {
-        var prediction = _model1Predictor.Generate(inputs);
+        var predictor = new Model1Predictor();
+        var prediction = predictor.Generate(inputs);
         return prediction;
     }
-    
+
     public class Model1Example : ISchemaFilter
     {
         public void Apply(OpenApiSchema schema, SchemaFilterContext context)

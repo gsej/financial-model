@@ -2,18 +2,13 @@ using MathNet.Numerics.Distributions;
 
 namespace PredictorLibrary;
 
-public class ReturnRateCalculator
+public class ReturnRateCalculator : IReturnRateCalculator
 {
-    private readonly Normal _normal;
-
-    public ReturnRateCalculator(double mean, double standardDeviation)
-    {
-        var random = new Random();
-        _normal = new Normal(mean, standardDeviation, random);  
-    }
+    private readonly Random _random = new();
     
-    public double GetReturnRate()
+    public decimal GetReturnRate(decimal mean, decimal standardDeviation)
     {
-        return _normal.Sample();
+        var normal = new Normal((double)mean, (double)standardDeviation, _random);
+        return (decimal)normal.Sample();
     }
 }

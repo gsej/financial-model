@@ -1,45 +1,32 @@
+using FluentAssertions;
 using PredictorLibrary;
-using Xunit.Abstractions;
+
 
 namespace Tests;
 
 public class ReturnRateCalculatorTests
-    
 {
-    private readonly ITestOutputHelper _outputHelper;
-
-    public ReturnRateCalculatorTests(ITestOutputHelper outputHelper)
-    {
-        _outputHelper = outputHelper;
-    }
-    
     [Fact]
-    public void aaaaaa()
+    public void GetReturnRate_ResultsShouldApproachMeanRateOfReturn()
     {
-        var calculator = new ReturnRateCalculator(.05, .25);
+        var calculator = new ReturnRateCalculator();
 
-        for (int i = 0; i < 100; i++)
+        var iterations = 50000;
+        
+        var results = new List<decimal>(iterations);
+
+        decimal expectedMean = 0.05m;
+        
+        decimal standardDeviation = 0.15m;
+        
+        for (int i = 0; i < iterations; i++)
         {
-            var rate = calculator.GetReturnRate();
-            _outputHelper.WriteLine(rate.ToString("F2"));
+            var rate = calculator.GetReturnRate(expectedMean, standardDeviation);
+            results.Add(rate);
         }
+
+        var actualMean = results.Average();
+
+        actualMean.Should().BeApproximately(expectedMean, 0.001m);
     }
-    //
-    // [Fact]
-    // public void Predict()
-    // {
-    //     
-    //     
-    //     
-    //     
-    //     
-    //     var predicator = new Predictor();
-    //
-    //     var results = predicator.Predict(100);
-    //
-    //     foreach (var result in results.Order())
-    //     {
-    //         _outputHelper.WriteLine(result.ToString("F2"));
-    //     }
-    // } 
 }

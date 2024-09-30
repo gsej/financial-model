@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { Model1ContainerComponent } from './model1/components/model1-container/model1-container.component';
 import { Model2ContainerComponent } from './model2/components/model2-container/model2-container.component';
 import localforage from 'localforage';
+import { Model3ContainerComponent } from './model3/components/model3-container/model3-container.component';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,8 @@ import localforage from 'localforage';
   imports: [
     RouterOutlet,
     Model1ContainerComponent,
-    Model2ContainerComponent
+    Model2ContainerComponent,
+    Model3ContainerComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'

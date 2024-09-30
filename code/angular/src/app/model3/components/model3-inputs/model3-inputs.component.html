@@ -1,4 +1,4 @@
-<form #model2Form="ngForm">
+<form #model3Form="ngForm">
   <app-card>
     <app-card-content>
       <div class="flex justify-between gap-4">
@@ -15,8 +15,7 @@
           </p>
           <p>
             <app-formlabel for="amountAtStart">Amount At Start</app-formlabel>
-            <input tabindex="5" class="input max-w-xs" type="number" id="amountAtStart" name="amountAtStart"
-              [(ngModel)]="inputs.amountAtStart" />
+            <input tabindex="5" class="input max-w-xs" type="number" id="amountAtStart" name="amountAtStart" [(ngModel)]="inputs.amountAtStart" />
           </p>
         </div>
 
@@ -52,6 +51,11 @@
             <app-formlabel [for]="'meanAnnualReturn' + i">Mean Annual Return ({{ allocation.name }}) </app-formlabel>
             <input [tabindex]="(9 + i).toString()" class="input max-w-xs" type="number" [id]="'meanAnnualReturn' + i"
               [name]="'meanAnnualReturn' + i" [(ngModel)]="allocation.meanAnnualReturn" />
+          </p>
+          <p>
+            <app-formlabel [for]="'standardDeviation' + i">Standard Deviation ({{ allocation.name }}) </app-formlabel>
+            <input [tabindex]="(11 + i).toString()" class="input max-w-xs" type="number" [id]="'standardDeviation' + i"
+              [name]="'standardDeviation' + i" [(ngModel)]="allocation.standardDeviation" />
           </p>
         </div>
         }

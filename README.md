@@ -17,4 +17,20 @@ are pretty close.
 
 ## Model 1
 
-This is a simple model which assumes a single portfolio with a fixed annual growth rate. It's based on part 1 of the video series: [https://www.youtube.com/watch?v=1LUIQa5hgMg](https://www.youtube.com/watch?v=1LUIQa5hgMg)
+This is a simple model assumes all of the assets in the portfolio are of a single type with a fixed annual growth rate. 
+It's based on part 1 of the video series: [https://www.youtube.com/watch?v=1LUIQa5hgMg](https://www.youtube.com/watch?v=1LUIQa5hgMg)
+For example, the entire portfolio could be in global equities, and it could be assumed they'll grow at 5% a year
+
+## Model 2
+
+This model splits the portfolio into two allocations each with its own fixed annual growth rate. 
+It's based on part 2 of the video series: [https://www.youtube.com/watch?v=nMfT6cAYJjU](https://www.youtube.com/watch?v=nMfT6cAYJjU)
+For example, we could have 80% of the portfolio in global equities (our _Growth_ allocation, with a growth rate of 5% a year,
+and 20% in GILTs (our _Minimal Risk_ allocation), with a growth rate of 1% per year.
+
+## Model 3 (Adding Risk)
+
+This model adds in an element of risk around the annual investment return. As well as the mean, we have a standard deviation, so the 
+return in any given year is the equivalent of the excel formula NORMINV(RAND(), m, s) where m is the mean annual return, and s the standard
+deviation. In the video Lars uses 25% for the standard deviation, and explains that this is a reasonable simplification.
+It's based on part 3 of the video series: [https://www.youtube.com/watch?v=3CeD0eefeQc](https://www.youtube.com/watch?v=3CeD0eefeQc)

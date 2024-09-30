@@ -5,17 +5,14 @@ namespace Api;
 
 public static class Program
 {
-    public static void Main(params string[]  args)
+    public static void Main(params string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
 
         builder.Configuration
             .AddJsonFile("appsettings.json", optional: true, reloadOnChange: false)
             .AddEnvironmentVariables();
-        
-        builder.Services.AddTransient<PredictorLibrary.Model1.Model1Predictor>();
-        builder.Services.AddTransient<PredictorLibrary.Model2.Model2Predictor>();
-        
+
         builder.Services.AddMemoryCache();
 
         builder.Services.AddCors(options =>
@@ -29,14 +26,19 @@ public static class Program
                 });
         });
 
-        builder.Services.AddControllers();
+        builder.Services.AddControllers()
+            .AddJsonOptions(options =>
+            {
+                options.JsonSerializerOptions.Converters.Add(new DecimalJsonConverter());
+            });
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen(s =>
         {
             s.SchemaFilter<Model1Controller.Model1Example>();
+            s.SchemaFilter<Model2Controller.Model2Example>();
+            s.SchemaFilter<Model3Controller.Model3Example>();
             s.CustomSchemaIds(x => x.FullName);
         });
-
         var app = builder.Build();
 
         app.UseSwagger();

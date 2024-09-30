@@ -1,0 +1,25 @@
+POST http://localhost:5200/api/model3
+Content-Type: application/json
+
+{
+    "startYear": 2020,
+    "ageAtStart": 30,
+    "endYear": 2022,
+    "amountAtStart": 1000,
+    "annualContribution": 1000,
+    "allocations": [
+        {
+            "name": "Growth",
+            "proportion": 0.8,
+            "meanAnnualReturn": 0.5,
+            "standardDeviation": 0.25
+        },
+        {
+            "name": "MinimalRisk",
+            "proportion": 0.2,
+            "meanAnnualReturn": 0,
+            "standardDeviation": 0
+        }
+    ],
+    "targetAge": 60
+}   

@@ -7,7 +7,6 @@ import { CardHeaderComponent } from '../../../components/card-header/card-header
 import { CardTitleComponent } from '../../../components/card-title/card-title.component';
 import { CardComponent } from '../../../components/card/card.component';
 import { FormLabelComponent } from '../../../components/form/form-label.component';
-import { InputComponent } from '../../../components/form/input.component';
 import { SeparatorComponent } from '../../../components/separator/separator.component';
 import { Model2Inputs } from '../../models/Model2Inputs';
 import { CommonModule } from '@angular/common';
@@ -19,7 +18,6 @@ import { CommonModule } from '@angular/common';
     CommonModule,
     FormsModule,
     FormLabelComponent,
-    InputComponent,
     ButtonComponent,
     CardComponent,
     CardContentComponent,

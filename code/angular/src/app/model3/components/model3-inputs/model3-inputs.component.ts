@@ -8,12 +8,14 @@ import { CardTitleComponent } from '../../../components/card-title/card-title.co
 import { CardComponent } from '../../../components/card/card.component';
 import { FormLabelComponent } from '../../../components/form/form-label.component';
 import { SeparatorComponent } from '../../../components/separator/separator.component';
-import { Model1Inputs } from '../../models/Model1Inputs';
+import { Model3Inputs } from '../../models/Model3Inputs';
+import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-model1-inputs',
+  selector: 'app-model3-inputs',
   standalone: true,
   imports: [
+    CommonModule,
     FormsModule,
     FormLabelComponent,
     ButtonComponent,
@@ -23,22 +25,21 @@ import { Model1Inputs } from '../../models/Model1Inputs';
     CardTitleComponent,
     CardHeaderComponent
   ],
-  templateUrl: './model1-inputs.component.html',
-  styleUrl: './model1-inputs.component.scss'
+  templateUrl: './model3-inputs.component.html',
+  styleUrl: './model3-inputs.component.scss'
 })
-export class Model1InputsComponent implements OnInit {
+export class Model3InputsComponent implements OnInit {
 
-  public inputs: Model1Inputs = new Model1Inputs();
+  public inputs: Model3Inputs = new Model3Inputs();
 
   private store: LocalForage;
 
   @Output()
-  public onCalculate = new EventEmitter<Model1Inputs>();
+  public onCalculate = new EventEmitter<Model3Inputs>();
 
   constructor() {
-
     this.store = localforage.createInstance({
-      name: "model1"
+      name: "model3"
     });
 
     this.store.getItem("inputs").then((inputs: any) => {
@@ -48,7 +49,6 @@ export class Model1InputsComponent implements OnInit {
       this.calculate();
     })
   }
-
 
   ngOnInit(): void {
     this.calculate();
@@ -62,7 +62,7 @@ export class Model1InputsComponent implements OnInit {
   }
 
   reset() {
-    this.inputs = new Model1Inputs();
+    this.inputs = new Model3Inputs();
     this.calculate();
   }
 }

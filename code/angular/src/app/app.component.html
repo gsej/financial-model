@@ -1,12 +1,9 @@
-
-
 <!-- very crude selector for now -->
 <select [value]="model" (change)="changeModel($event)">
   <option value="model1">Model1</option>
   <option value="model2">Model2</option>
+  <option value="model3">Model3</option>
 </select>
-
-
 
 <div class="flex min-h-screen rounded-xl border bg-background font-mono">
   <div class="relative flex h-screen w-full overflow-hidden">
@@ -20,6 +17,10 @@
 
           @if (model === 'model2') {
             <app-model2-container></app-model2-container>
+          }
+
+          @if (model === 'model3') {
+            <app-model3-container></app-model3-container>
           }
 
         </div>
