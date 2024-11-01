@@ -4,3 +4,13 @@ add validation to make sure number of years entered isn't crazy (before making p
 # model 3
 #
 #
+## infra
+
+docker file
+azure devops pipeline to build and deploy to a container app
+
+
+pin random seed so other parameters can be varied
+
+specify rebalancing strategy
+

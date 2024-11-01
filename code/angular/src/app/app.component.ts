@@ -4,6 +4,7 @@ import { Model1ContainerComponent } from './model1/components/model1-container/m
 import { Model2ContainerComponent } from './model2/components/model2-container/model2-container.component';
 import localforage from 'localforage';
 import { Model3ContainerComponent } from './model3/components/model3-container/model3-container.component';
+import { Model4ContainerComponent } from './model4/components/model4-container/model4-container.component';
 
 @Component({
   selector: 'app-root',
@@ -13,6 +14,7 @@ import { Model3ContainerComponent } from './model3/components/model3-container/m
     Model1ContainerComponent,
     Model2ContainerComponent,
     Model3ContainerComponent,
+    Model4ContainerComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
@@ -22,7 +24,7 @@ export class AppComponent {
 
   private store: LocalForage;
 
-  public model: string = 'model1';
+  public model: string = 'model4';
 
   constructor() {
     this.store = localforage.createInstance({

@@ -8,6 +8,8 @@ import { Model2Inputs } from './model2/models/Model2Inputs';
 import { Model2Prediction } from './model2/models/Model2Prediction';
 import { Model3Inputs } from './model3/models/Model3Inputs';
 import { Model3Prediction } from './model3/models/Model3Prediction';
+import { Model4Prediction } from './model4/models/Model4Prediction';
+import { Model4Inputs } from './model4/models/Model4Inputs';
 
 @Injectable({
   providedIn: 'root'
@@ -26,5 +28,9 @@ export class PredictionService {
 
   getModel3Prediction(request: Model3Inputs): Observable<Model3Prediction> {
     return this.http.post<Model3Prediction>("http://localhost:5200/api/model3", request);
+  }
+
+  getModel4Prediction(request: Model4Inputs): Observable<Model4Prediction> {
+    return this.http.post<Model4Prediction>("http://localhost:5200/api/model4", request);
   }
 }

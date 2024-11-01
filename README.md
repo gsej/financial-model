@@ -34,3 +34,5 @@ This model adds in an element of risk around the annual investment return. As we
 return in any given year is the equivalent of the excel formula NORMINV(RAND(), m, s) where m is the mean annual return, and s the standard
 deviation. In the video Lars uses 25% for the standard deviation, and explains that this is a reasonable simplification.
 It's based on part 3 of the video series: [https://www.youtube.com/watch?v=3CeD0eefeQc](https://www.youtube.com/watch?v=3CeD0eefeQc)
+
+## Model 4 (Multiple iterations)

@@ -27,6 +27,7 @@ public class Model3Predictor
                 {
                     Name = allocation.Name,
                     AmountAtStart = amountAtStart * allocation.Proportion,
+                    RateOfReturn = rateOfReturn,
                     InvestmentReturn = amountAtStart * allocation.Proportion * rateOfReturn
                 };
                 

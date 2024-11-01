@@ -7,7 +7,7 @@ namespace Tests.Model1;
 public class Model1PredictorTests
 {
     private readonly Model1Predictor _model1Predictor = new ();
-    
+
     [Fact]
     public void Generate_GeneratesCorrectYearValues()
     {

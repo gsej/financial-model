@@ -1,0 +1,10 @@
+<app-header class="mb-2">Model 4</app-header>
+<div class="grid grid-cols-2 pt-0">
+  <div class="flex flex-col">
+    <app-model4-inputs (onCalculate)="calculate($event)"></app-model4-inputs>
+  </div>
+  <div class="flex flex-col">
+     <app-model4-chart class="h-full" [prediction]="prediction"></app-model4-chart>
+  </div>
+</div>
+<app-model4-results [prediction]="prediction"></app-model4-results>

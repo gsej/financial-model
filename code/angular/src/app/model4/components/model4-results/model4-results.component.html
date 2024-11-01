@@ -1,0 +1,29 @@
+@if (prediction) {
+  <div class="relative w-full overflow-auto">
+
+    <p>Mean: {{ formatCurrency(prediction.mean) }}</p>
+    <p>Minimum: {{ formatCurrency(prediction.minimum) }}</p>
+    <p>Maximum: {{ formatCurrency(prediction.maximum) }}</p>
+
+
+
+
+    <table class="w-full table-auto text-sm">
+      <thead class="border-b">
+        <tr class="">
+          <th class="h-12 px-4 text-center align-middle font-medium text-muted-foreground [&:has([role=checkbox])]:pr-0">Iteration</th>
+          <th class="h-12 px-4 text-right align-middle font-medium text-muted-foreground [&:has([role=checkbox])]:pr-0">Amount At Target Age</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (iteration of prediction.iterations; track iteration.iteration) {
+          <tr class="border-b hover:bg-muted/50">
+            <td class="p-4 text-center text-gray-600">{{ iteration.iteration }}</td>
+            <td class="p-4 text-right text-gray-600">{{ formatCurrency(iteration.amountAtTargetAge) }}</td>
+          </tr>
+        }
+      </tbody>
+      <tfoot class="bg-primary font-medium text-primary-foreground"></tfoot>
+    </table>
+  </div>
+}

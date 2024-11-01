@@ -3,6 +3,7 @@
   <option value="model1">Model1</option>
   <option value="model2">Model2</option>
   <option value="model3">Model3</option>
+  <option value="model4">Model4</option>
 </select>
 
 <div class="flex min-h-screen rounded-xl border bg-background font-mono">
@@ -21,6 +22,10 @@
 
           @if (model === 'model3') {
             <app-model3-container></app-model3-container>
+          }
+
+          @if (model === 'model4') {
+            <app-model4-container></app-model4-container>
           }
 
         </div>
