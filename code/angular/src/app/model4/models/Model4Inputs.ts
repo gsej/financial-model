@@ -8,6 +8,7 @@ export class Model4Inputs {
   meanAnnualReturn = 0.05;
   targetAge = 67;
   iterations = 1000;
+  randomSeed = null;
 }
 
 export class Model4Allocation {

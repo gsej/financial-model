@@ -25,7 +25,7 @@ public class ReturnRateCalculatorTests
         var expectedMean = 0.05m;
         var standardDeviation = 0.15m;
         
-        var calculator = new ReturnRateCalculator();
+        var calculator = new ReturnRateCalculator(Seeds.Default);
         
         var rates = new List<decimal>(iterations);
                
@@ -47,7 +47,7 @@ public class ReturnRateCalculatorTests
         
         var iterations = 10_000_000;
         
-        var calculator = new ReturnRateCalculator();
+        var calculator = new ReturnRateCalculator(Seeds.Default);
 
         var expectedMean = 0.05m;
         var standardDeviation = 0.25m;
@@ -69,6 +69,5 @@ public class ReturnRateCalculatorTests
         
         numberBelowThreshold.Should().Be(0);
         numberAboveThreshold.Should().Be(0);
-        
     }
 }

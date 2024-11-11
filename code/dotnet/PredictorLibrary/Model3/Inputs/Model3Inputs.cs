@@ -8,5 +8,7 @@ public class Model3Inputs {
     public decimal AnnualContribution { get; set; }
     public int TargetAge { get; set; }
     
+    public int? RandomSeed { get; set; }
+    
     public IList<Allocation> Allocations { get; set; } = new List<Allocation>();
 }

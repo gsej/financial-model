@@ -1,3 +1,15 @@
 <div class="h-full">
-   <canvas class="h-full" id="MyChart">{{ chart }}</canvas>
- </div>
+  <div>
+    <canvas class="h-full" id="MyChart">{{ chart }}</canvas>
+  </div>
+
+  <div>
+
+    <form #form="ngForm">
+      <app-formlabel for="cumulative">Cumulative</app-formlabel>
+      <input class="number max-w-xs" type="checkbox" id="cumulative" name="cumulative" [(ngModel)]="cumulative" (ngModelChange)="onCumulativeChange($event)" />
+    </form>
+
+  </div>
+
+</div>

@@ -17,7 +17,8 @@ public class Model4Controller : ControllerBase
     public Model4Prediction GetPrediction([FromBody] Model4Inputs inputs)
     {
         var predictor = new Model4Predictor();
-        var rateOfReturnCalculator = new ReturnRateCalculator();
+
+        var rateOfReturnCalculator = inputs.RandomSeed.HasValue ? new ReturnRateCalculator(inputs.RandomSeed.Value) : new ReturnRateCalculator(); 
         var prediction = predictor.Generate(rateOfReturnCalculator, inputs);
         return prediction;
     }
@@ -53,6 +54,7 @@ public class Model4Controller : ControllerBase
                     },
                     ["targetAge"] = new OpenApiInteger(67),
                     ["iterations"] = new OpenApiInteger(1000),
+                    ["randomSeed"] = new OpenApiInteger(1),
                 };
             }
         }

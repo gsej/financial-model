@@ -54,6 +54,10 @@
       <div class="flex justify-between gap-4">
         <div class="flex-1">
           <p>
+            <app-formlabel for="randomSeed">Random Seed</app-formlabel>
+            <input tabindex="30" class="input max-w-xs" type="number" id="randomSeed" name="randomSeed" [(ngModel)]="inputs.randomSeed" />
+          </p>
+          <p>
             <app-formlabel for="iterations">Iterations</app-formlabel>
             <input tabindex="15" class="input max-w-xs" type="number" id="iterations"
               name="iterations" [(ngModel)]="inputs.iterations" />

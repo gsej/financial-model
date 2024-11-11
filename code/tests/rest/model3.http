@@ -21,5 +21,6 @@ Content-Type: application/json
             "standardDeviation": 0
         }
     ],
-    "targetAge": 60
+    "targetAge": 60,
+    "randomSeed": 1
 }   

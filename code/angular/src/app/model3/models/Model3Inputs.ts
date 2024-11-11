@@ -8,7 +8,8 @@ export class Model3Inputs {
     new Model3Allocation('Growth', 0.5, 0.05, 0.25),
     new Model3Allocation('MinimalRisk', 0.5, 0, 0)];
   meanAnnualReturn = 0.05;
-  targetAge = 67
+  targetAge = 67;
+  randomSeed = null;
 }
 
 export class Model3Allocation {

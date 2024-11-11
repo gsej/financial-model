@@ -17,7 +17,7 @@ public class Model3Controller : ControllerBase
     public Model3Prediction GetPrediction([FromBody] Model3Inputs inputs)
     {
         var predictor = new Model3Predictor();
-        var rateOfReturnCalculator = new ReturnRateCalculator();
+        var rateOfReturnCalculator = inputs.RandomSeed.HasValue ? new ReturnRateCalculator(inputs.RandomSeed.Value) : new ReturnRateCalculator();
         var prediction = predictor.Generate(rateOfReturnCalculator, inputs);
         return prediction;
     }
@@ -54,6 +54,7 @@ public class Model3Controller : ControllerBase
                         },
                     },
                     ["targetAge"] = new OpenApiInteger(67),
+                    ["randomSeed"] = new OpenApiInteger(1),
                 };
             }
         }

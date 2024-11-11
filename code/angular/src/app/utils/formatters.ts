@@ -8,6 +8,20 @@ export function formatQuantity(value: number | null | undefined) {
   }).format(value);
 }
 
+export function format000s(value: number | null | undefined) {
+  if (value === null || value === undefined) {
+    return '';
+  }
+
+  const thousands = value / 1000;
+
+  return new Intl.NumberFormat('en-US', {
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 0
+  }).format(thousands);
+}
+
+
 export function formatCurrency(value: number | null | undefined) {
   if (value === null || value === undefined) {
     return '';
