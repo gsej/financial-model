@@ -1,6 +1,5 @@
 namespace PredictorLibrary.Model4.Outputs;
 
-public record Percentile(int PercentileSelector, double Value);
 public record Band(decimal Lower, decimal Upper, double Percentage);
 
 public class Model4Prediction
@@ -10,9 +9,6 @@ public class Model4Prediction
     public decimal Mean { get; set; }
     public decimal Minimum { get; set; }
     public decimal Maximum { get; set; }
-    
-    public List<Percentile> Percentiles { get; set; } = new();
-    
     public List<Band> Bands { get; set; } = new();
     public List<Band> CumulativeBands { get; set; } = new();
     

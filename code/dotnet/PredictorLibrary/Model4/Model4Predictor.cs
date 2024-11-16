@@ -54,23 +54,34 @@ public class Model4Predictor
         prediction.Mean = mean;
         prediction.Minimum = minimum;
         prediction.Maximum = maximum;
-        
-        for (var p = 10; p <= 100; p += 10)
+
+        var doubleAmounts = amounts.Select(a => (double)a).ToList();
+        var p90Value = Statistics.Percentile(doubleAmounts, 99);
+
+        var bands = new List<int>();
+
+        var band = 0;
+        while (true)
         {
-            var doubleAmounts = amounts.Select(a => (double)a).ToList();
-            prediction.Percentiles.Add(new Percentile(p, Statistics.Percentile(doubleAmounts, p)));
+            bands.Add(band);
+
+            band += 200_000;
+
+            if (band > p90Value)
+            {
+                break;
+            }
         }
+        bands.Add(100_000_000);
         
-        var bands = new decimal[] {0, 200_000, 400_000, 600_000, 800_000, 1_000_000, 1_200_000, 1_400_000, 1_600_000, 10_000_000, 100_000_000};
-        
-        for (var i = 1; i < bands.Length; i++)
-        {
-            prediction.CumulativeBands.Add(GetBand(amounts, 0, bands[i]));
-        }
-        
-        for (var i = 1; i < bands.Length; i++)
+        for (var i = 1; i < bands.Count; i++)
         {
             prediction.Bands.Add(GetBand(amounts, bands[i-1], bands[i]));
+        }
+        
+        for (var i = 1; i < bands.Count; i++)
+        {
+            prediction.CumulativeBands.Add(GetBand(amounts, 0, bands[i]));
         }
         
         return prediction;

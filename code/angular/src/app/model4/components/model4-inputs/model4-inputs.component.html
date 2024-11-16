@@ -1,27 +1,27 @@
-<form #model4Form="ngForm">
-  <app-card>
-    <app-card-content>
-      <div class="flex justify-between gap-4">
+<form #model4Form="ngForm" class="h-full  flex flex-col">
+  <app-card class="flex flex-grow">
+    <app-card-content class=" flex-grow">
+      <div class="flex justify-between flex-grow">
         <div class="flex-1">
-          <p>
+          <p class="mb-1">
             <app-formlabel for="ageAtStart">Age At Start</app-formlabel>
             <input tabindex="3" class="input max-w-xs" type="number" id="ageAtStart" name="ageAtStart"
               [(ngModel)]="inputs.ageAtStart" />
           </p>
-          <p>
+          <p class="mb-1">
             <app-formlabel for="amountAtStart">Amount At Start</app-formlabel>
             <input tabindex="5" class="input max-w-xs" type="number" id="amountAtStart" name="amountAtStart" [(ngModel)]="inputs.amountAtStart" />
           </p>
         </div>
 
         <div class="flex-1">
-          <p>
+          <p class="mb-1">
             <app-formlabel for="targetAge">Target Age</app-formlabel>
             <input tabindex="4" class="input max-w-xs" type="number" id="targetAge" name="targetAge"
               [(ngModel)]="inputs.targetAge" />
           </p>
 
-          <p>
+          <p class="mb-1">
             <app-formlabel for="annualContribution">Annual Contribution</app-formlabel>
             <input tabindex="6" class="input max-w-xs" type="number" id="annualContribution" name="annualContribution"
               [(ngModel)]="inputs.annualContribution" />
@@ -32,17 +32,17 @@
       <div class="flex justify-between gap-4">
         @for (allocation of inputs.allocations; track allocation; let i = $index) {
         <div class="flex-1">
-          <p>
+          <p class="mb-1">
             <app-formlabel [for]="'proportion' + i">Proportion ({{ allocation.name }})</app-formlabel>
             <input [tabindex]="(7 + i).toString()" class="input max-w-xs" type="number" [id]="'proportion' + i"
               [name]="'proportion' + i" [(ngModel)]="allocation.proportion" />
           </p>
-          <p>
+          <p class="mb-1">
             <app-formlabel [for]="'meanAnnualReturn' + i">Mean Annual Return ({{ allocation.name }}) </app-formlabel>
             <input [tabindex]="(9 + i).toString()" class="input max-w-xs" type="number" [id]="'meanAnnualReturn' + i"
               [name]="'meanAnnualReturn' + i" [(ngModel)]="allocation.meanAnnualReturn" />
           </p>
-          <p>
+          <p class="mb-1">
             <app-formlabel [for]="'standardDeviation' + i">Standard Deviation ({{ allocation.name }}) </app-formlabel>
             <input [tabindex]="(11 + i).toString()" class="input max-w-xs" type="number" [id]="'standardDeviation' + i"
               [name]="'standardDeviation' + i" [(ngModel)]="allocation.standardDeviation" />
@@ -53,11 +53,11 @@
 
       <div class="flex justify-between gap-4">
         <div class="flex-1">
-          <p>
+          <p class="mb-1">
             <app-formlabel for="randomSeed">Random Seed</app-formlabel>
             <input tabindex="30" class="input max-w-xs" type="number" id="randomSeed" name="randomSeed" [(ngModel)]="inputs.randomSeed" />
           </p>
-          <p>
+          <p class="mb-1">
             <app-formlabel for="iterations">Iterations</app-formlabel>
             <input tabindex="15" class="input max-w-xs" type="number" id="iterations"
               name="iterations" [(ngModel)]="inputs.iterations" />

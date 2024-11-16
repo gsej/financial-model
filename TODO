@@ -2,15 +2,15 @@ add validation to ensure allocations add up to 100%
 add validation to make sure number of years entered isn't crazy (before making public)
 
 # model 3
-#
-#
-## infra
-
-docker file
-azure devops pipeline to build and deploy to a container app
 
 
-pin random seed so other parameters can be varied
+add control to show some documentation - an icon that can be clicked to show a popup help box
 
+# for model 4:
+add more detailed tests for model 4
 specify rebalancing strategy
+
+to aid this: 
+
+for model 3, show allocation values in output grid
 

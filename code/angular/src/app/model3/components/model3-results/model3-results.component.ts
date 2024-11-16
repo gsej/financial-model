@@ -3,6 +3,7 @@ import { Component, Input } from '@angular/core';
 import { formatCurrency, formatPercentage, formatQuantity } from '../../../utils/formatters';
 import { CommonModule } from '@angular/common';
 import { Model3Prediction } from '../../models/Model3Prediction';
+import { Model3Year } from '../../models/Model3Year';
 
 
 
@@ -21,4 +22,8 @@ export class Model3ResultsComponent {
 
   @Input()
   public prediction: Model3Prediction | null = null;
+
+  public getAmountAtStart(year: Model3Year, allocation: string) {
+    return year.allocations.find(a => a.name === allocation)?.amountAtStart;
+  }
 }

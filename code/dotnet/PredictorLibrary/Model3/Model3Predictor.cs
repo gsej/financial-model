@@ -5,6 +5,11 @@ namespace PredictorLibrary.Model3;
 
 public class Model3Predictor
 {
+    private readonly FixedPercentageRebalancer _rebalancer;
+    public Model3Predictor()
+    {
+        _rebalancer = new FixedPercentageRebalancer();
+    }
     public Model3Prediction Generate(IReturnRateCalculator returnRateCalculator, Model3Inputs inputs)
     {
         var prediction = new Model3Prediction();
@@ -16,19 +21,21 @@ public class Model3Predictor
             // add the annual contribution to the amount before calculating the investment return.
             // this pretends that the annual contribution is deposited at the start of each year, which is a simplification.
             
-            var amountAtStart = amountFromPriorYear + inputs.AnnualContribution;
+            var totalAmountAtStart = amountFromPriorYear + inputs.AnnualContribution;
             
             var allocationYears = new List<Model3AllocationYear>();
             
             foreach (var allocation in inputs.Allocations)
             {
                 var rateOfReturn = returnRateCalculator.GetReturnRate(allocation.MeanAnnualReturn, allocation.StandardDeviation);
+
+                var allocationAmountAtStart = _rebalancer.Rebalance(totalAmountAtStart, inputs.Allocations, allocation.Name);//////totalAmountAtStart * allocation.Proportion,
                 var allocationYear = new Model3AllocationYear
                 {
                     Name = allocation.Name,
-                    AmountAtStart = amountAtStart * allocation.Proportion,
+                    AmountAtStart = allocationAmountAtStart,
                     RateOfReturn = rateOfReturn,
-                    InvestmentReturn = amountAtStart * allocation.Proportion * rateOfReturn
+                    InvestmentReturn = allocationAmountAtStart * rateOfReturn
                 };
                 
                 allocationYears.Add(allocationYear);
@@ -40,7 +47,7 @@ public class Model3Predictor
                 Age = inputs.AgeAtStart + y - inputs.StartYear,
                 YearIndex = y - inputs.StartYear,
                 PriorYear  = amountFromPriorYear, 
-                AmountAtStart = amountAtStart,
+                AmountAtStart = totalAmountAtStart,
                 Allocations = allocationYears
             };
             prediction.Years.Add(year);
@@ -51,5 +58,14 @@ public class Model3Predictor
         prediction.AmountAtTargetAge = prediction.Years.SingleOrDefault(year => year.Age == inputs.TargetAge)?.AmountAtEnd;
 
         return prediction;   
+    }
+}
+
+public class FixedPercentageRebalancer
+{
+    public decimal Rebalance(decimal totalPortfolioAmount, IList<Allocation> allocations, string allocationName)
+    {
+        var allocation = allocations.Single(a => a.Name == allocationName);
+        return totalPortfolioAmount * allocation.Proportion;
     }
 }

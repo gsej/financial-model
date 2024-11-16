@@ -7,6 +7,8 @@
           <th class="h-12 px-4 text-center align-middle font-medium text-muted-foreground [&:has([role=checkbox])]:pr-0">Age</th>
           <th class="h-12 px-4 text-center align-middle font-medium text-muted-foreground [&:has([role=checkbox])]:pr-0">Year Index</th>
           <th class="h-12 px-4 text-right align-middle font-medium text-muted-foreground [&:has([role=checkbox])]:pr-0">Prior Year</th>
+          <th class="h-12 px-4 text-right align-middle font-medium text-muted-foreground [&:has([role=checkbox])]:pr-0">Growth At Start</th>
+          <th class="h-12 px-4 text-right align-middle font-medium text-muted-foreground [&:has([role=checkbox])]:pr-0">Minimal Risk At Start</th>
           <th class="h-12 px-4 text-right align-middle font-medium text-muted-foreground [&:has([role=checkbox])]:pr-0">Amount At Start</th>
           <th class="h-12 px-4 text-right align-middle font-medium text-muted-foreground [&:has([role=checkbox])]:pr-0">Investment Return</th>
           <th class="h-12 px-4 text-right align-middle font-medium text-muted-foreground [&:has([role=checkbox])]:pr-0">Amount At End</th>
@@ -19,6 +21,8 @@
             <td class="p-4 text-center text-gray-600">{{ year.age }}</td>
             <td class="p-4 text-center text-gray-600">{{ year.yearIndex }}</td>
             <td class="p-4 text-right text-gray-600">{{ formatCurrency(year.priorYear) }}</td>
+            <td class="p-4 text-right text-gray-600">{{ formatCurrency(getAmountAtStart(year, 'Growth')) }}</td>
+            <td class="p-4 text-right text-gray-600">{{ formatCurrency(getAmountAtStart(year, 'MinimalRisk')) }}</td>
             <td class="p-4 text-right text-gray-600">{{ formatCurrency(year.amountAtStart) }}</td>
             <td class="p-4 text-right text-gray-600">{{ formatCurrency(year.investmentReturn) }}</td>
             <td class="p-4 text-right text-gray-600">{{ formatCurrency(year.amountAtEnd) }}</td>

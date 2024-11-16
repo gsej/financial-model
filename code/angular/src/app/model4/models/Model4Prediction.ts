@@ -18,6 +18,7 @@ export class Percentile {
 }
 
 export class Band {
+  lower!: number;
   upper!: number;
   percentage!: number;
 }

@@ -24,14 +24,14 @@ export class Model4ChartComponent implements OnChanges {
   private values: string[] = [];
   private previousPrediction: string | null = null;
 
-  public cumulative = true;
+  public chartType = 'cumulative';
 
   @Input()
   public prediction: Model4Prediction | null = null;
 
   ngOnInit(): void {
     this.previousPrediction = JSON.stringify(this.prediction);
-    this.setData(this.cumulative);
+    this.setData(this.chartType);
     this.createChart();
   }
 
@@ -39,28 +39,27 @@ export class Model4ChartComponent implements OnChanges {
     const serializedPrediction = JSON.stringify(this.prediction);
     if (this.previousPrediction !== serializedPrediction) {
       this.previousPrediction = serializedPrediction;
-      this.setData(this.cumulative);
+      this.setData(this.chartType);
       this.createChart();
     }
   }
 
-  onCumulativeChange(value: boolean) {
-    this.cumulative = value;
-    this.setData(this.cumulative);
+  onCumulativeChange(value: string) {
+    this.chartType = value;
+    this.setData(this.chartType);
     this.createChart();
   }
 
-  setData(cumulative: boolean) {
+  setData(chartType: string) {
     if (this.prediction) {
-      if (cumulative) {
-        this.values = this.prediction.cumulativeBands.map(band => format000s(band.upper));
+      if (chartType === 'cumulative') {
+        this.values = this.prediction.cumulativeBands.map(band => `${format000s(band.upper)}k`);
         this.percentages = this.prediction.cumulativeBands.map(band => band.percentage * 100);
       }
-      else {
-        this.values = this.prediction.bands.map(band => format000s(band.upper));
+      else if (chartType === 'frequency') {
+        this.values = this.prediction.bands.map(band =>`${format000s(band.lower)}k-${format000s(band.upper)}k`);
         this.percentages = this.prediction.bands.map(band => band.percentage * 100);
       }
-
 
     }
     else {
@@ -80,7 +79,7 @@ export class Model4ChartComponent implements OnChanges {
       data: {
         labels: this.values,
         datasets: [{
-          label: this.cumulative ? 'Cumulative Percentage' : 'Percentage',
+          label: this.chartType ? 'Cumulative Percentage' : 'Percentage',
           data: this.percentages,
           backgroundColor: 'rgba(75, 192, 192, 0.2)',
           borderColor: 'rgba(75, 192, 192, 1)',
@@ -92,7 +91,7 @@ export class Model4ChartComponent implements OnChanges {
           x: {
             beginAtZero: true,
             title: {
-              display: true,
+              display: false,
               text: 'Thousands'
             }
 
