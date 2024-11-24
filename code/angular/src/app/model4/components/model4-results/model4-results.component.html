@@ -4,6 +4,8 @@
       <thead class="border-b">
         <tr class="">
           <th class="h-12 px-4 text-center align-middle font-medium text-muted-foreground [&:has([role=checkbox])]:pr-0">Iteration</th>
+          <th class="h-12 px-4 text-right align-middle font-medium text-muted-foreground [&:has([role=checkbox])]:pr-0">Growth At Target Age</th>
+          <th class="h-12 px-4 text-right align-middle font-medium text-muted-foreground [&:has([role=checkbox])]:pr-0">Minimal Risk At Target Age</th>
           <th class="h-12 px-4 text-right align-middle font-medium text-muted-foreground [&:has([role=checkbox])]:pr-0">Amount At Target Age</th>
         </tr>
       </thead>
@@ -11,6 +13,8 @@
         @for (iteration of prediction.iterations; track iteration.iteration) {
           <tr class="border-b hover:bg-muted/50">
             <td class="p-4 text-center text-gray-600">{{ iteration.iteration }}</td>
+            <td class="p-4 text-right text-gray-600">{{ formatCurrency(getAmountAtTargetAge(iteration, 'Growth')) }}</td>
+            <td class="p-4 text-right text-gray-600">{{ formatCurrency(getAmountAtTargetAge(iteration, 'MinimalRisk')) }}</td>
             <td class="p-4 text-right text-gray-600">{{ formatCurrency(iteration.amountAtTargetAge) }}</td>
           </tr>
         }

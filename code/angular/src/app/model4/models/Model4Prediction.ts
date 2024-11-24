@@ -1,4 +1,4 @@
-import { Model4Year } from "./Model4Year";
+import { Model4Iteration } from "./Model4Iteration";
 
 export class Model4Prediction {
 
@@ -6,7 +6,7 @@ export class Model4Prediction {
   minimum!: number;
   maximum!: number;
 
-  iterations!: Model4Year[];
+  iterations!: Model4Iteration[];
   percentiles!: Percentile[];
   bands!: Band[];
   cumulativeBands!: Band[];

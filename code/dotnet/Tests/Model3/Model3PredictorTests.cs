@@ -239,6 +239,7 @@ public class Model3PredictorTests
                 }
             },
         };
+      
         // act
         var returnRateCalculator = Substitute.For<IReturnRateCalculator>();
         returnRateCalculator.GetReturnRate(0.05m, 0.25m).Returns(0.05m);

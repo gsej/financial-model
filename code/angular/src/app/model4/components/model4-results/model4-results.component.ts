@@ -3,6 +3,7 @@ import { Component, Input } from '@angular/core';
 import { formatCurrency, formatPercentage, formatQuantity } from '../../../utils/formatters';
 import { CommonModule } from '@angular/common';
 import { Model4Prediction } from '../../models/Model4Prediction';
+import { Model4Iteration } from '../../models/Model4Iteration';
 
 
 
@@ -21,4 +22,8 @@ export class Model4ResultsComponent {
 
   @Input()
   public prediction: Model4Prediction | null = null;
+
+  public getAmountAtTargetAge(iteration: Model4Iteration, allocation: string) {
+    return iteration.allocations.find(a => a.name === allocation)?.amountAtTargetAge;
+  }
 }

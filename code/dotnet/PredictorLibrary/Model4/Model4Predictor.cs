@@ -35,6 +35,11 @@ public class Model4Predictor
         for (var i = 0; i < inputs.Iterations; i++)
         {
             var model3Prediction = model3Predictor.Generate(returnRateCalculator, model3Inputs);
+
+            var year = model3Prediction.Years.SingleOrDefault(year => year.Age == inputs.TargetAge);
+            
+            
+            var allocations = year?.Allocations.Select(a => new Model4Allocation(a.Name, a.AmountAtStart + a.InvestmentReturn)).ToList();
             
             var amountAtTargetAge = model3Prediction.Years.SingleOrDefault(year => year.Age == inputs.TargetAge)?.AmountAtEnd;
             
@@ -42,6 +47,7 @@ public class Model4Predictor
             {
                 Iteration = i,
                 AmountAtTargetAge = amountAtTargetAge ?? 0,
+                Allocations = allocations
             });
         }
         
