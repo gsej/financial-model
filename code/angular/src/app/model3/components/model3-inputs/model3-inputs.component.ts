@@ -10,6 +10,7 @@ import { FormLabelComponent } from '../../../components/form/form-label.componen
 import { SeparatorComponent } from '../../../components/separator/separator.component';
 import { Model3Inputs } from '../../models/Model3Inputs';
 import { CommonModule } from '@angular/common';
+import { PopupComponent } from '../../../components/popup/popup.component';
 
 @Component({
   selector: 'app-model3-inputs',
@@ -23,7 +24,8 @@ import { CommonModule } from '@angular/common';
     CardContentComponent,
     SeparatorComponent,
     CardTitleComponent,
-    CardHeaderComponent
+    CardHeaderComponent,
+    PopupComponent
   ],
   templateUrl: './model3-inputs.component.html',
   styleUrl: './model3-inputs.component.scss'

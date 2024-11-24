@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import localforage from 'localforage';
 import { ButtonComponent } from '../../../components/button/button.component';
@@ -10,6 +10,7 @@ import { FormLabelComponent } from '../../../components/form/form-label.componen
 import { SeparatorComponent } from '../../../components/separator/separator.component';
 import { Model4Inputs } from '../../models/Model4Inputs';
 import { CommonModule } from '@angular/common';
+import { PopupComponent } from '../../../components/popup/popup.component';
 
 @Component({
   selector: 'app-model4-inputs',
@@ -23,7 +24,8 @@ import { CommonModule } from '@angular/common';
     CardContentComponent,
     SeparatorComponent,
     CardTitleComponent,
-    CardHeaderComponent
+    CardHeaderComponent,
+    PopupComponent
   ],
   templateUrl: './model4-inputs.component.html',
   styleUrl: './model4-inputs.component.scss'

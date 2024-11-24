@@ -5,8 +5,7 @@
         <div class="flex-1">
           <p class="mb-1">
             <app-formlabel for="ageAtStart">Age At Start</app-formlabel>
-            <input tabindex="3" class="input max-w-xs" type="number" id="ageAtStart" name="ageAtStart"
-              [(ngModel)]="inputs.ageAtStart" />
+            <input tabindex="3" class="input max-w-xs" type="number" id="ageAtStart" name="ageAtStart" [(ngModel)]="inputs.ageAtStart" />
           </p>
           <p class="mb-1">
             <app-formlabel for="amountAtStart">Amount At Start</app-formlabel>
@@ -17,16 +16,17 @@
         <div class="flex-1">
           <p class="mb-1">
             <app-formlabel for="targetAge">Target Age</app-formlabel>
-            <input tabindex="4" class="input max-w-xs" type="number" id="targetAge" name="targetAge"
-              [(ngModel)]="inputs.targetAge" />
+            <input tabindex="4" class="input max-w-xs" type="number" id="targetAge" name="targetAge" [(ngModel)]="inputs.targetAge" />
           </p>
 
           <p class="mb-1">
             <app-formlabel for="annualContribution">Annual Contribution</app-formlabel>
-            <input tabindex="6" class="input max-w-xs" type="number" id="annualContribution" name="annualContribution"
-              [(ngModel)]="inputs.annualContribution" />
+            <input tabindex="6" class="input max-w-xs" type="number" id="annualContribution" name="annualContribution" [(ngModel)]="inputs.annualContribution" />
           </p>
         </div>
+      </div>
+      <div>
+
       </div>
 
       <div class="flex justify-between gap-4">
@@ -34,18 +34,15 @@
         <div class="flex-1">
           <p class="mb-1">
             <app-formlabel [for]="'proportion' + i">Proportion ({{ allocation.name }})</app-formlabel>
-            <input [tabindex]="(7 + i).toString()" class="input max-w-xs" type="number" [id]="'proportion' + i"
-              [name]="'proportion' + i" [(ngModel)]="allocation.proportion" />
+            <input [tabindex]="(7 + i).toString()" class="input max-w-xs" type="number" [id]="'proportion' + i" [name]="'proportion' + i" [(ngModel)]="allocation.proportion" />
           </p>
           <p class="mb-1">
             <app-formlabel [for]="'meanAnnualReturn' + i">Mean Annual Return ({{ allocation.name }}) </app-formlabel>
-            <input [tabindex]="(9 + i).toString()" class="input max-w-xs" type="number" [id]="'meanAnnualReturn' + i"
-              [name]="'meanAnnualReturn' + i" [(ngModel)]="allocation.meanAnnualReturn" />
+            <input [tabindex]="(9 + i).toString()" class="input max-w-xs" type="number" [id]="'meanAnnualReturn' + i" [name]="'meanAnnualReturn' + i" [(ngModel)]="allocation.meanAnnualReturn" />
           </p>
           <p class="mb-1">
             <app-formlabel [for]="'standardDeviation' + i">Standard Deviation ({{ allocation.name }}) </app-formlabel>
-            <input [tabindex]="(11 + i).toString()" class="input max-w-xs" type="number" [id]="'standardDeviation' + i"
-              [name]="'standardDeviation' + i" [(ngModel)]="allocation.standardDeviation" />
+            <input [tabindex]="(11 + i).toString()" class="input max-w-xs" type="number" [id]="'standardDeviation' + i" [name]="'standardDeviation' + i" [(ngModel)]="allocation.standardDeviation" />
           </p>
         </div>
         }
@@ -53,14 +50,20 @@
 
       <div class="flex justify-between gap-4">
         <div class="flex-1">
-          <p class="mb-1">
+          <div class="w-full">
             <app-formlabel for="randomSeed">Random Seed</app-formlabel>
-            <input tabindex="30" class="input max-w-xs" type="number" id="randomSeed" name="randomSeed" [(ngModel)]="inputs.randomSeed" />
-          </p>
+            <div class="w-full flex">
+              <input tabindex="30" class="input max-w-xs" type="number" id="randomSeed" name="randomSeed" [(ngModel)]="inputs.randomSeed" />
+              <app-popup id="randomSeedPopup" class="ml-4 self-center">
+                <p>Leave blank to use a new random seed for each recalculation. Entering a fixed number means the same random number sequence will be
+                  used each time, which makes it easier to compare the results when other parameters are changed.
+                </p>
+              </app-popup>
+            </div>
+          </div>
           <p class="mb-1">
             <app-formlabel for="iterations">Iterations</app-formlabel>
-            <input tabindex="15" class="input max-w-xs" type="number" id="iterations"
-              name="iterations" [(ngModel)]="inputs.iterations" />
+            <input tabindex="15" class="input max-w-xs" type="number" id="iterations" name="iterations" [(ngModel)]="inputs.iterations" />
           </p>
         </div>
         <div class="flex-1">

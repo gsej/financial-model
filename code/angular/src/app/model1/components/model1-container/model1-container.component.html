@@ -1,4 +1,14 @@
-<app-header class="mb-2">Model 1</app-header>
+<div class="flex mb-2">
+  <app-header>Model 1</app-header>
+  <div class="flex items-center">
+    <app-popup class="ml-4">
+      <p>This is a simple model that assumes all of the assets in the portfolio are of a single type with a fixed annual growth rate.
+        For example, the entire portfolio could be in global equities, and it could be assumed they'll grow at 5% a year
+      </p>
+    </app-popup>
+  </div>
+</div>
+
 <div class="grid grid-cols-2 pt-0">
   <div class="flex flex-col">
     <app-model1-inputs (onCalculate)="calculate($event)"></app-model1-inputs>

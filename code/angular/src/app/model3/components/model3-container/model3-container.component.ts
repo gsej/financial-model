@@ -7,6 +7,7 @@ import { Model3Inputs } from '../../models/Model3Inputs';
 import { Model3ChartComponent } from '../model3-chart/model3-chart.component';
 import { Model3InputsComponent } from '../model3-inputs/model3-inputs.component';
 import { Model3Prediction } from '../../models/Model3Prediction';
+import { PopupComponent } from '../../../components/popup/popup.component';
 
 @Component({
   selector: 'app-model3-container',
@@ -15,7 +16,8 @@ import { Model3Prediction } from '../../models/Model3Prediction';
     Model3InputsComponent,
     Model3ResultsComponent,
     HeaderComponent,
-    Model3ChartComponent],
+    Model3ChartComponent,
+    PopupComponent],
   templateUrl: './model3-container.component.html',
   styleUrl: './model3-container.component.scss'
 })

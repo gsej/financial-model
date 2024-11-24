@@ -7,6 +7,7 @@ import { Model2Inputs } from '../../models/Model2Inputs';
 import { Model2ChartComponent } from '../model2-chart/model2-chart.component';
 import { Model2InputsComponent } from '../model2-inputs/model2-inputs.component';
 import { Model2Prediction } from '../../models/Model2Prediction';
+import { PopupComponent } from '../../../components/popup/popup.component';
 
 @Component({
   selector: 'app-model2-container',
@@ -15,7 +16,8 @@ import { Model2Prediction } from '../../models/Model2Prediction';
     Model2InputsComponent,
     Model2ResultsComponent,
     HeaderComponent,
-    Model2ChartComponent],
+    Model2ChartComponent,
+    PopupComponent],
   templateUrl: './model2-container.component.html',
   styleUrl: './model2-container.component.scss'
 })

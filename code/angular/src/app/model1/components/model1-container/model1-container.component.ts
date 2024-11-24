@@ -6,6 +6,7 @@ import { PredictionService } from '../../../prediction.service';
 import { Model1Inputs } from '../../models/Model1Inputs';
 import { Model1ChartComponent } from '../model1-chart/model1-chart.component';
 import { Model1InputsComponent } from '../model1-inputs/model1-inputs.component';
+import { PopupComponent } from '../../../components/popup/popup.component';
 
 
 @Component({
@@ -15,7 +16,8 @@ import { Model1InputsComponent } from '../model1-inputs/model1-inputs.component'
     Model1InputsComponent,
     Model1ResultsComponent,
     HeaderComponent,
-    Model1ChartComponent],
+    Model1ChartComponent,
+    PopupComponent],
   templateUrl: './model1-container.component.html',
   styleUrl: './model1-container.component.scss'
 })

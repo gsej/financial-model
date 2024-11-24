@@ -36,3 +36,5 @@ deviation. In the video Lars uses 25% for the standard deviation, and explains t
 It's based on part 3 of the video series: [https://www.youtube.com/watch?v=3CeD0eefeQc](https://www.youtube.com/watch?v=3CeD0eefeQc)
 
 ## Model 4 (Multiple iterations)
+
+Here I use the same underlying model as in Model 3, however the model is run multiple times, and rather than the results being year-by-year, they reflect the value attained at the target age. 

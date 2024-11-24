@@ -1,4 +1,13 @@
-<app-header class="mb-2">Model 2</app-header>
+<div class="flex mb-2">
+  <app-header>Model 2</app-header>
+  <div class="flex items-center">
+    <app-popup class="ml-4">
+<p>This model splits the portfolio into two allocations each with its own fixed annual growth rate.
+For example, we could have 80% of the portfolio in a <em>Growth</em> allocation (e.g. a global equity fund) at a growth rate of 5% a year,
+and 20% in a <em>MinimalRisk</em> allocation (e.g. GILTs), with a growth rate of 1% per year.</p>
+</app-popup>
+  </div>
+</div>
 <div class="grid grid-cols-2 pt-0">
   <div class="flex flex-col">
     <app-model2-inputs (onCalculate)="calculate($event)"></app-model2-inputs>

@@ -7,6 +7,7 @@ import { Model4Inputs } from '../../models/Model4Inputs';
 import { Model4ChartComponent } from '../model4-chart/model4-chart.component';
 import { Model4InputsComponent } from '../model4-inputs/model4-inputs.component';
 import { Model4Prediction } from '../../models/Model4Prediction';
+import { PopupComponent } from '../../../components/popup/popup.component';
 
 @Component({
   selector: 'app-model4-container',
@@ -15,7 +16,8 @@ import { Model4Prediction } from '../../models/Model4Prediction';
     Model4InputsComponent,
     Model4ResultsComponent,
     HeaderComponent,
-    Model4ChartComponent],
+    Model4ChartComponent,
+    PopupComponent],
   templateUrl: './model4-container.component.html',
   styleUrl: './model4-container.component.scss'
 })
