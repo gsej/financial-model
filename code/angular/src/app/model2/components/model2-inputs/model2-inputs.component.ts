@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import localforage from 'localforage';
 import { ButtonComponent } from '../../../components/button/button.component';
@@ -26,7 +26,8 @@ import { CommonModule } from '@angular/common';
     CardHeaderComponent
   ],
   templateUrl: './model2-inputs.component.html',
-  styleUrl: './model2-inputs.component.scss'
+  styleUrl: './model2-inputs.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class Model2InputsComponent implements OnInit {
 

@@ -4,15 +4,15 @@ import { formatCurrency, formatPercentage, formatQuantity } from '../../../utils
 import { CommonModule } from '@angular/common';
 import { Model4Prediction } from '../../models/Model4Prediction';
 import { Model4Iteration } from '../../models/Model4Iteration';
-
-
+import { ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'app-model4-results',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './model4-results.component.html',
-  styleUrl: './model4-results.component.scss'
+  styleUrl: './model4-results.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class Model4ResultsComponent {
 

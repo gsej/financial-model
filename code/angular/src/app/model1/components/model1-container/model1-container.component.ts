@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Model1ResultsComponent } from '../model1-results/model1-results.component';
 import { HeaderComponent } from '../../../components/header/header.component';
 import { Model1Prediction } from '../../models/Model1Prediction';
@@ -7,7 +7,6 @@ import { Model1Inputs } from '../../models/Model1Inputs';
 import { Model1ChartComponent } from '../model1-chart/model1-chart.component';
 import { Model1InputsComponent } from '../model1-inputs/model1-inputs.component';
 import { PopupComponent } from '../../../components/popup/popup.component';
-
 
 @Component({
   selector: 'app-model1-container',
@@ -19,7 +18,8 @@ import { PopupComponent } from '../../../components/popup/popup.component';
     Model1ChartComponent,
     PopupComponent],
   templateUrl: './model1-container.component.html',
-  styleUrl: './model1-container.component.scss'
+  styleUrl: './model1-container.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class Model1ContainerComponent {
 

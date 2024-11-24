@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import localforage from 'localforage';
 import { ButtonComponent } from '../../../components/button/button.component';
@@ -28,7 +28,8 @@ import { PopupComponent } from '../../../components/popup/popup.component';
     PopupComponent
   ],
   templateUrl: './model3-inputs.component.html',
-  styleUrl: './model3-inputs.component.scss'
+  styleUrl: './model3-inputs.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class Model3InputsComponent implements OnInit {
 

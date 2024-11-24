@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Model3ResultsComponent } from '../model3-results/model3-results.component';
 import { HeaderComponent } from '../../../components/header/header.component';
 
@@ -19,7 +19,8 @@ import { PopupComponent } from '../../../components/popup/popup.component';
     Model3ChartComponent,
     PopupComponent],
   templateUrl: './model3-container.component.html',
-  styleUrl: './model3-container.component.scss'
+  styleUrl: './model3-container.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class Model3ContainerComponent {
 

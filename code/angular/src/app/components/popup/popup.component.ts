@@ -1,11 +1,12 @@
 import { CommonModule } from '@angular/common';
-import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-popup',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './popup.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PopupComponent implements OnInit {
 

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 import { formatCurrency, formatPercentage, formatQuantity } from '../../../utils/formatters';
 import { CommonModule } from '@angular/common';
@@ -12,7 +12,8 @@ import { Model3Year } from '../../models/Model3Year';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './model3-results.component.html',
-  styleUrl: './model3-results.component.scss'
+  styleUrl: './model3-results.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class Model3ResultsComponent {
 

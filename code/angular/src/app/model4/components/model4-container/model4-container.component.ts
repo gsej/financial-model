@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Model4ResultsComponent } from '../model4-results/model4-results.component';
 import { HeaderComponent } from '../../../components/header/header.component';
 
@@ -19,7 +19,8 @@ import { PopupComponent } from '../../../components/popup/popup.component';
     Model4ChartComponent,
     PopupComponent],
   templateUrl: './model4-container.component.html',
-  styleUrl: './model4-container.component.scss'
+  styleUrl: './model4-container.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class Model4ContainerComponent {
 

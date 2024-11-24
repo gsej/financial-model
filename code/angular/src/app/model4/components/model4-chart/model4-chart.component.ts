@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import Chart from 'chart.js/auto';
 import annotationPlugin from 'chartjs-plugin-annotation';
 
@@ -14,7 +14,8 @@ Chart.register(annotationPlugin);
   standalone: true,
   imports: [FormsModule, FormLabelComponent],
   templateUrl: './model4-chart.component.html',
-  styleUrl: './model4-chart.component.scss'
+  styleUrl: './model4-chart.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class Model4ChartComponent implements OnChanges {
 

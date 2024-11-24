@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Model1ContainerComponent } from './model1/components/model1-container/model1-container.component';
 import { Model2ContainerComponent } from './model2/components/model2-container/model2-container.component';
@@ -17,7 +17,8 @@ import { Model4ContainerComponent } from './model4/components/model4-container/m
     Model4ContainerComponent,
   ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent {
   title = 'pension-predictor';

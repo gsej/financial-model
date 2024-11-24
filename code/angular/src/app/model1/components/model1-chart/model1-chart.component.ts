@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import Chart from 'chart.js/auto';
 import annotationPlugin from 'chartjs-plugin-annotation';
 import { Model1Prediction } from '../../models/Model1Prediction';
@@ -11,7 +11,8 @@ Chart.register(annotationPlugin);
   standalone: true,
   imports: [],
   templateUrl: './model1-chart.component.html',
-  styleUrl: './model1-chart.component.scss'
+  styleUrl: './model1-chart.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class Model1ChartComponent implements OnChanges {
 
