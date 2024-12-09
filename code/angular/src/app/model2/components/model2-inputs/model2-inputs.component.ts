@@ -10,6 +10,7 @@ import { FormLabelComponent } from '../../../components/form/form-label.componen
 import { SeparatorComponent } from '../../../components/separator/separator.component';
 import { Model2Inputs } from '../../models/Model2Inputs';
 import { CommonModule } from '@angular/common';
+import { HeaderComponent } from '../../../components/header/header.component';
 
 @Component({
   selector: 'app-model2-inputs',
@@ -23,7 +24,8 @@ import { CommonModule } from '@angular/common';
     CardContentComponent,
     SeparatorComponent,
     CardTitleComponent,
-    CardHeaderComponent
+    CardHeaderComponent,
+    HeaderComponent
   ],
   templateUrl: './model2-inputs.component.html',
   styleUrl: './model2-inputs.component.scss',
