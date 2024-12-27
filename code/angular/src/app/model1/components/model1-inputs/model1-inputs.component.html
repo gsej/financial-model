@@ -1,49 +1,46 @@
 <form #model1Form="ngForm">
-  <app-card class="h-72">
-    <app-card-content>
+  <gsej-ng-tailwind-card class="h-72">
+    <gsej-ng-tailwind-card-content>
       <div class="flex gap-4 mt-1">
         <div class="flex-1">
-          <app-formlabel for="startYear">Start Year</app-formlabel>
+          <gsej-ng-tailwind-formlabel for="startYear">Start Year</gsej-ng-tailwind-formlabel>
           <input tabindex="1" class="input max-w-xs" type="number" id="startYear" name="startYear" [(ngModel)]="inputs.startYear" />
         </div>
         <div class="flex-1">
-          <app-formlabel for="endYear">End Year</app-formlabel>
+          <gsej-ng-tailwind-formlabel for="endYear">End Year</gsej-ng-tailwind-formlabel>
           <input tabindex="2" class="input max-w-xs" type="number" id="endYear" name="endYear" [(ngModel)]="inputs.endYear" />
         </div>
       </div>
       <div class="flex gap-4 mt-1">
         <div class="flex-1">
-          <app-formlabel for="ageAtStart">Age At Start</app-formlabel>
+          <gsej-ng-tailwind-formlabel for="ageAtStart">Age At Start</gsej-ng-tailwind-formlabel>
           <input tabindex="3" class="input max-w-xs" type="number" id="ageAtStart" name="ageAtStart" [(ngModel)]="inputs.ageAtStart" />
         </div>
         <div class="flex-1">
-          <app-formlabel for="targetAge">Target Age</app-formlabel>
+          <gsej-ng-tailwind-formlabel for="targetAge">Target Age</gsej-ng-tailwind-formlabel>
           <input tabindex="4" class="input max-w-xs" type="number" id="targetAge" name="targetAge" [(ngModel)]="inputs.targetAge" />
         </div>
       </div>
       <div class="flex gap-4 mt-1">
         <div class="flex-1">
-          <app-formlabel for="amountAtStart">Amount At Start</app-formlabel>
-          <input tabindex="5" class="input max-w-xs" type="number" id="amountAtStart" name="amountAtStart"
-            [(ngModel)]="inputs.amountAtStart" />
+          <gsej-ng-tailwind-formlabel for="amountAtStart">Amount At Start</gsej-ng-tailwind-formlabel>
+          <input tabindex="5" class="input max-w-xs" type="number" id="amountAtStart" name="amountAtStart" [(ngModel)]="inputs.amountAtStart" />
         </div>
         <div class="flex-1">
-          <app-formlabel for="annualContribution">Annual Contribution</app-formlabel>
-          <input tabindex="6" class="input max-w-xs" type="number" id="annualContribution" name="annualContribution"
-            [(ngModel)]="inputs.annualContribution" />
+          <gsej-ng-tailwind-formlabel for="annualContribution">Annual Contribution</gsej-ng-tailwind-formlabel>
+          <input tabindex="6" class="input max-w-xs" type="number" id="annualContribution" name="annualContribution" [(ngModel)]="inputs.annualContribution" />
         </div>
       </div>
       <div class="flex gap-4 mt-1">
         <div class="flex-1">
-          <app-formlabel for="meanAnnualReturn">Mean annual return</app-formlabel>
-          <input tabindex="7" class="input max-w-xs" type="number" id="meanAnnualReturn" name="meanAnnualReturn"
-            [(ngModel)]="inputs.meanAnnualReturn" />
+          <gsej-ng-tailwind-formlabel for="meanAnnualReturn">Mean annual return</gsej-ng-tailwind-formlabel>
+          <input tabindex="7" class="input max-w-xs" type="number" id="meanAnnualReturn" name="meanAnnualReturn" [(ngModel)]="inputs.meanAnnualReturn" />
         </div>
         <div class="flex-1">
-          <app-button [variant]="'secondary'" class="w-28 my-7 px-2" (click)="reset()">Reset</app-button>
-          <app-button class="w-28 my-7" (click)="calculate()">Recalculate</app-button>
+          <gsej-ng-tailwind-button [variant]="'secondary'" class="w-28 my-7 px-2" (click)="reset()">Reset</gsej-ng-tailwind-button>
+          <gsej-ng-tailwind-button class="w-28 my-7" (click)="calculate()">Recalculate</gsej-ng-tailwind-button>
         </div>
       </div>
-    </app-card-content>
-  </app-card>
+    </gsej-ng-tailwind-card-content>
+  </gsej-ng-tailwind-card>
 </form>

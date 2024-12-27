@@ -1,14 +1,8 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import localforage from 'localforage';
-import { ButtonComponent } from '../../../components/button/button.component';
-import { CardContentComponent } from '../../../components/card-content/card-content.component';
-import { CardHeaderComponent } from '../../../components/card-header/card-header.component';
-import { CardTitleComponent } from '../../../components/card-title/card-title.component';
-import { CardComponent } from '../../../components/card/card.component';
-import { FormLabelComponent } from '../../../components/form/form-label.component';
-import { SeparatorComponent } from '../../../components/separator/separator.component';
 import { Model1Inputs } from '../../models/Model1Inputs';
+import { ButtonComponent, CardComponent, CardContentComponent, CardHeaderComponent, CardTitleComponent, FormLabelComponent } from '@gsej/tailwind-components';
 
 @Component({
   selector: 'app-model1-inputs',
@@ -19,7 +13,6 @@ import { Model1Inputs } from '../../models/Model1Inputs';
     ButtonComponent,
     CardComponent,
     CardContentComponent,
-    SeparatorComponent,
     CardTitleComponent,
     CardHeaderComponent
   ],

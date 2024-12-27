@@ -19,6 +19,7 @@
     "@angular/platform-browser-dynamic": "^18.1.0",
     "@angular/router": "^18.1.0",
     "@fontsource/ibm-plex-mono": "5.0.14",
+    "@gsej/tailwind-components": "^0.0.6",
     "chart.js": "^4.4.3",
     "chartjs-plugin-annotation": "^3.0.1",
     "localforage": "^1.10.0",

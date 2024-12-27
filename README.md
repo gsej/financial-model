@@ -3,16 +3,16 @@
 Implements the pension planning spreadsheet presented by Lars Kroijer in one of his video series, but using code rather than 
 Excel.
 
-In his [video series](https://www.youtube.com/watch?v=1LUIQa5hgMg),  Lars creates a spreadsheet modeling the performance of a 
-portfolio comprising a growth component (e.g. an equities fund) and a minimal risk component (e.g. short term gilts). 
-He runs the model 1000 times, and shows the spread of outcomes. I found this very informative, however his spreadsheet uses 
-features available in Excel (e.g. datatables) but not in LibreOffice, and as I use Linux, I decided to replicate this in code.
+In his [video series](https://www.youtube.com/watch?v=1LUIQa5hgMg), Lars creates a spreadsheet modeling the performance of a 
+portfolio comprising a growth component (e.g. an equities fund) and a minimal risk component (e.g. short term gilts).
 
-The application is made up of a dotnet webapi which performs the calculations, and a relatively dumb angular front end 
-which displays the data.
+I found this very informative, however his spreadsheet uses features available in Excel (e.g. datatables) but not in LibreOffice, and as I use Linux, 
+and enjoy using code, I decided to explore this with a C# api, and an Angular front end
 
-Both the api and the front end are divided into different `models`. Each model is based on one of the spreadsheets presented
-by Lars. They are not identical to the ones he presents, because to an extent I've changed them for my own needs, but they
+In Lars's spreadsheet, he builds up his solution in _stages_, each stage expanding on the last, and he creates a new spreadsheet tab for each stage. In my
+app on the other hand, I've called each stage a _model_, and each can be accessed using the options at the top of the screen.
+
+My _models_ are not identical to the _tabs_ in the spreadsheet Lars presents, because to an extent I've changed them for my own needs, but they
 are pretty close.
 
 ## Model 1
@@ -38,3 +38,19 @@ It's based on part 3 of the video series: [https://www.youtube.com/watch?v=3CeD0
 ## Model 4 (Multiple iterations)
 
 Here I use the same underlying model as in Model 3, however the model is run multiple times, and rather than the results being year-by-year, they reflect the value attained at the target age. 
+add validation to ensure allocations add up to 100%
+add validation to make sure number of years entered isn't crazy (before making public)
+
+
+Refactor input sections to make them row based rather than column based
+
+adding retirement spending.
+
+basically uses a negative contribution after retirement risk, then
+looking at the potential death date (e.g. age 95) see what the odds are of
+running out of money.
+
+Move shared components into an npm package (keep within same repo for now)
+
+# Future
+specify rebalancing strategy

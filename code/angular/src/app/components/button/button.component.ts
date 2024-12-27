@@ -29,5 +29,4 @@ export class ButtonComponent implements OnInit{
       this.presetClasses = this.secondary;
     }
   }
-
 }

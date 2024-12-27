@@ -1,13 +1,11 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Model4ResultsComponent } from '../model4-results/model4-results.component';
-import { HeaderComponent } from '../../../components/header/header.component';
-
 import { PredictionService } from '../../../prediction.service';
 import { Model4Inputs } from '../../models/Model4Inputs';
 import { Model4ChartComponent } from '../model4-chart/model4-chart.component';
 import { Model4InputsComponent } from '../model4-inputs/model4-inputs.component';
 import { Model4Prediction } from '../../models/Model4Prediction';
-import { PopupComponent } from '../../../components/popup/popup.component';
+import { HeaderComponent, PopupComponent } from '@gsej/tailwind-components';
 
 @Component({
   selector: 'app-model4-container',

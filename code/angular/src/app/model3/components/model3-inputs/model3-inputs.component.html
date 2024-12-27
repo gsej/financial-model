@@ -1,34 +1,34 @@
 <form #model3Form="ngForm">
-  <app-card>
-    <app-card-content>
+  <gsej-ng-tailwind-card>
+    <gsej-ng-tailwind-card-content>
       <div class="flex gap-4 mt-1">
         <div class="flex-1">
-          <app-formlabel for="startYear">Start Year</app-formlabel>
+          <gsej-ng-tailwind-formlabel for="startYear">Start Year</gsej-ng-tailwind-formlabel>
           <input tabindex="1" class="input max-w-xs" type="number" id="startYear" name="startYear" [(ngModel)]="inputs.startYear" />
         </div>
         <div class="flex-1">
-          <app-formlabel for="endYear">End Year</app-formlabel>
+          <gsej-ng-tailwind-formlabel for="endYear">End Year</gsej-ng-tailwind-formlabel>
           <input tabindex="2" class="input max-w-xs" type="number" id="endYear" name="endYear" [(ngModel)]="inputs.endYear" />
         </div>
       </div>
       <div class="flex gap-4 mt-1">
         <div class="flex-1">
-          <app-formlabel for="ageAtStart">Age At Start</app-formlabel>
+          <gsej-ng-tailwind-formlabel for="ageAtStart">Age At Start</gsej-ng-tailwind-formlabel>
           <input tabindex="3" class="input max-w-xs" type="number" id="ageAtStart" name="ageAtStart" [(ngModel)]="inputs.ageAtStart" />
         </div>
         <div class="flex-1">
-          <app-formlabel for="targetAge">Target Age</app-formlabel>
+          <gsej-ng-tailwind-formlabel for="targetAge">Target Age</gsej-ng-tailwind-formlabel>
           <input tabindex="4" class="input max-w-xs" type="number" id="targetAge" name="targetAge" [(ngModel)]="inputs.targetAge" />
         </div>
       </div>
 
       <div class="flex gap-4 mt-1">
         <div class="flex-1">
-          <app-formlabel for="amountAtStart">Amount At Start</app-formlabel>
+          <gsej-ng-tailwind-formlabel for="amountAtStart">Amount At Start</gsej-ng-tailwind-formlabel>
           <input tabindex="5" class="input max-w-xs" type="number" id="amountAtStart" name="amountAtStart" [(ngModel)]="inputs.amountAtStart" />
         </div>
         <div class="flex-1">
-          <app-formlabel for="annualContribution">Annual Contribution</app-formlabel>
+          <gsej-ng-tailwind-formlabel for="annualContribution">Annual Contribution</gsej-ng-tailwind-formlabel>
           <input tabindex="6" class="input max-w-xs" type="number" id="annualContribution" name="annualContribution" [(ngModel)]="inputs.annualContribution" />
         </div>
       </div>
@@ -37,15 +37,15 @@
       <h2 class="font-heading text-l font-bold mt-2">{{ allocation.name }}</h2>
       <div class="flex gap-4 mt-1">
         <div class="flex-1">
-          <app-formlabel [for]="'proportion' + i">Proportion</app-formlabel>
+          <gsej-ng-tailwind-formlabel [for]="'proportion' + i">Proportion</gsej-ng-tailwind-formlabel>
           <input [tabindex]="(7 + i).toString()" class="input max-w-xs" type="number" [id]="'proportion' + i" [name]="'proportion' + i" [(ngModel)]="allocation.proportion" />
         </div>
         <div class="flex-1">
-          <app-formlabel [for]="'meanAnnualReturn' + i">Mean Annual Return</app-formlabel>
+          <gsej-ng-tailwind-formlabel [for]="'meanAnnualReturn' + i">Mean Annual Return</gsej-ng-tailwind-formlabel>
           <input [tabindex]="(9 + i).toString()" class="input max-w-xs" type="number" [id]="'meanAnnualReturn' + i" [name]="'meanAnnualReturn' + i" [(ngModel)]="allocation.meanAnnualReturn" />
         </div>
         <div class="flex-1">
-          <app-formlabel [for]="'standardDeviation' + i">Standard Deviation</app-formlabel>
+          <gsej-ng-tailwind-formlabel [for]="'standardDeviation' + i">Standard Deviation</gsej-ng-tailwind-formlabel>
           <input [tabindex]="(11 + i).toString()" class="input max-w-xs" type="number" [id]="'standardDeviation' + i" [name]="'standardDeviation' + i" [(ngModel)]="allocation.standardDeviation" />
         </div>
       </div>
@@ -54,22 +54,22 @@
       <div class="flex gap-4 mt-1">
         <div class="flex-1">
           <div class="w-full">
-            <app-formlabel for="randomSeed">Random Seed</app-formlabel>
+            <gsej-ng-tailwind-formlabel for="randomSeed">Random Seed</gsej-ng-tailwind-formlabel>
             <div class="w-full flex">
               <input tabindex="30" class="input max-w-xs" type="number" id="randomSeed" name="randomSeed" [(ngModel)]="inputs.randomSeed" />
-              <app-popup id="randomSeedPopup" class="ml-4 self-center">
+              <gsej-ng-tailwind-popup id="randomSeedPopup" class="ml-4 self-center">
                 <p>Leave blank to use a new random seed for each recalculation. Entering a fixed number means the same random number sequence will be
                   used each time, which makes it easier to compare the results when other parameters are changed.
                 </p>
-              </app-popup>
+              </gsej-ng-tailwind-popup>
             </div>
           </div>
         </div>
         <div class="flex-1">
-          <app-button [variant]="'secondary'" class="w-28 my-7 px-2" (click)="reset()">Reset</app-button>
-          <app-button class="w-28 my-7" (click)="calculate()">Recalculate</app-button>
+          <gsej-ng-tailwind-button [variant]="'secondary'" class="w-28 my-7 px-2" (click)="reset()">Reset</gsej-ng-tailwind-button>
+          <gsej-ng-tailwind-button class="w-28 my-7" (click)="calculate()">Recalculate</gsej-ng-tailwind-button>
         </div>
       </div>
-    </app-card-content>
-  </app-card>
+    </gsej-ng-tailwind-card-content>
+  </gsej-ng-tailwind-card>
 </form>

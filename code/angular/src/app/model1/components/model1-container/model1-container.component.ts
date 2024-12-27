@@ -1,12 +1,12 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Model1ResultsComponent } from '../model1-results/model1-results.component';
-import { HeaderComponent } from '../../../components/header/header.component';
+import { HeaderComponent, PopupComponent } from '@gsej/tailwind-components';
 import { Model1Prediction } from '../../models/Model1Prediction';
 import { PredictionService } from '../../../prediction.service';
 import { Model1Inputs } from '../../models/Model1Inputs';
 import { Model1ChartComponent } from '../model1-chart/model1-chart.component';
 import { Model1InputsComponent } from '../model1-inputs/model1-inputs.component';
-import { PopupComponent } from '../../../components/popup/popup.component';
+
 
 @Component({
   selector: 'app-model1-container',

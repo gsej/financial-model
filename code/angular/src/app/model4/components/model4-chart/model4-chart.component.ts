@@ -4,8 +4,8 @@ import annotationPlugin from 'chartjs-plugin-annotation';
 
 import { format000s } from '../../../utils/formatters';
 import { Model4Prediction } from '../../models/Model4Prediction';
-import { FormLabelComponent } from '../../../components/form/form-label.component';
 import { FormsModule } from '@angular/forms';
+import { FormLabelComponent } from '@gsej/tailwind-components';
 
 Chart.register(annotationPlugin);
 
