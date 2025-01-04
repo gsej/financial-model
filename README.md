@@ -42,15 +42,28 @@ add validation to ensure allocations add up to 100%
 add validation to make sure number of years entered isn't crazy (before making public)
 
 
-Refactor input sections to make them row based rather than column based
 
-adding retirement spending.
+### TODO: 
 
-basically uses a negative contribution after retirement risk, then
-looking at the potential death date (e.g. age 95) see what the odds are of
-running out of money.
+Part 5 (https://www.youtube.com/watch?v=QKTlwQC8BwQ&t=10s)
+
+Just adds the ability to switch from contribution to withdrawal at a certain age. He also adds volatility into the contributions (but I don't want to implement that)
+
+Can be modelled just by allowing a separate inflow/outflow rate for each year. Possibly combine this with a more flexible approach to 
+allocations.
+
+Perhaps need to add additional charts or output to show the 
+possible results at various ages - not just the "target age", which at this point becomes a bit arbitrary.
+
+Part 6 (https://www.youtube.com/watch?v=C7HtNy5ggWI)
+
+Talks about difference between CAGR and average growth rate. 
+
+We should specify the CAGR, but then calculate average annual return for the calculations of each year. Look up formula.
 
 Move shared components into an npm package (keep within same repo for now)
 
 # Future
 specify rebalancing strategy
+
+Try dialog element for popups.
