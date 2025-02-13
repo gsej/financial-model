@@ -45,6 +45,7 @@ add validation to make sure number of years entered isn't crazy (before making p
 
 ### TODO: 
 
+
 Part 5 (https://www.youtube.com/watch?v=QKTlwQC8BwQ&t=10s)
 
 Just adds the ability to switch from contribution to withdrawal at a certain age. He also adds volatility into the contributions (but I don't want to implement that)
@@ -67,3 +68,7 @@ Move shared components into an npm package (keep within same repo for now)
 specify rebalancing strategy
 
 Try dialog element for popups.
+
+\ Bugs
+
+Requires two clicks on recalculate before it does anything
