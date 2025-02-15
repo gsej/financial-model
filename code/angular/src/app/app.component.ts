@@ -5,12 +5,15 @@ import { Model2ContainerComponent } from './model2/components/model2-container/m
 import localforage from 'localforage';
 import { Model3ContainerComponent } from './model3/components/model3-container/model3-container.component';
 import { Model4ContainerComponent } from './model4/components/model4-container/model4-container.component';
+import { SettingsService } from './settings/settings.service';
+import { PiComponent } from './components/pi/pi.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
     RouterOutlet,
+    PiComponent,
     Model1ContainerComponent,
     Model2ContainerComponent,
     Model3ContainerComponent,
@@ -27,7 +30,12 @@ export class AppComponent {
 
   public model: string = 'model4';
 
-  constructor() {
+  public gitHash: string = 'not set';
+
+  constructor(settingsService: SettingsService) {
+
+    this.gitHash = settingsService.settings.gitHash;
+
     this.store = localforage.createInstance({
       name: "app"
     });

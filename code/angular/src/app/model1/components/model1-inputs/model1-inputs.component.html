@@ -37,8 +37,8 @@
           <input tabindex="7" class="input max-w-xs" type="number" id="meanAnnualReturn" name="meanAnnualReturn" [(ngModel)]="inputs.meanAnnualReturn" />
         </div>
         <div class="flex-1">
-          <gsej-ng-tailwind-button [variant]="'secondary'" class="w-28 my-7 px-2" (click)="reset()">Reset</gsej-ng-tailwind-button>
-          <gsej-ng-tailwind-button class="w-28 my-7" (click)="calculate()">Recalculate</gsej-ng-tailwind-button>
+          <app-button variant="secondary" class="w-28 my-7 px-2" (click)="reset()">Reset</app-button>
+          <app-button variant="primary" class="w-28 my-7" (click)="calculate()">Recalculate</app-button>
         </div>
       </div>
     </gsej-ng-tailwind-card-content>

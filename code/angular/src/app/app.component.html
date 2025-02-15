@@ -6,9 +6,9 @@
   <option value="model4">Model4</option>
 </select>
 
-<div class="flex min-h-screen rounded-xl border bg-background font-mono">
-  <div class="relative flex h-screen w-full overflow-hidden">
-    <main class="flex flex-1 flex-col">
+<div class="min-h-screen flex flex-col">
+  <div class="flex-1 rounded-xl border bg-background font-mono">
+    <main class="flex-1">
       <div class="flex-1 overflow-y-auto">
         <!-- application shell -->
         <div class="grid items-start gap-8 p-6">
@@ -27,9 +27,11 @@
           @if (model === 'model4') {
             <app-model4-container></app-model4-container>
           }
-
         </div>
       </div>
     </main>
   </div>
+  <footer class="p-4 text-right text-sm text-gray-500">
+    <app-pi></app-pi>
+  </footer>
 </div>

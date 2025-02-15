@@ -57,17 +57,17 @@
             <gsej-ng-tailwind-formlabel for="randomSeed">Random Seed</gsej-ng-tailwind-formlabel>
             <div class="w-full flex">
               <input tabindex="30" class="input max-w-xs" type="number" id="randomSeed" name="randomSeed" [(ngModel)]="inputs.randomSeed" />
-              <gsej-ng-tailwind-popup id="randomSeedPopup" class="ml-4 self-center">
+              <app-popup id="randomSeedPopup" class="ml-4 self-center">
                 <p>Leave blank to use a new random seed for each recalculation. Entering a fixed number means the same random number sequence will be
                   used each time, which makes it easier to compare the results when other parameters are changed.
                 </p>
-              </gsej-ng-tailwind-popup>
+              </app-popup>
             </div>
           </div>
         </div>
         <div class="flex-1">
-          <gsej-ng-tailwind-button [variant]="'secondary'" class="w-28 my-7 px-2" (click)="reset()">Reset</gsej-ng-tailwind-button>
-          <gsej-ng-tailwind-button class="w-28 my-7" (click)="calculate()">Recalculate</gsej-ng-tailwind-button>
+          <app-button [variant]="'secondary'" class="w-28 my-7 px-2" (click)="reset()">Reset</app-button>
+          <app-button class="w-28 my-7" (click)="calculate()">Recalculate</app-button>
         </div>
       </div>
     </gsej-ng-tailwind-card-content>

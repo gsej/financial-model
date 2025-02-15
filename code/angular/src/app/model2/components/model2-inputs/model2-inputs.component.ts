@@ -2,8 +2,9 @@ import { ChangeDetectionStrategy, Component, EventEmitter, OnInit, Output } from
 import { FormsModule } from '@angular/forms';
 import localforage from 'localforage';
 import { Model2Inputs } from '../../models/Model2Inputs';
-import { ButtonComponent, CardComponent, CardContentComponent, CardHeaderComponent, CardTitleComponent, FormLabelComponent, HeaderComponent } from '@gsej/tailwind-components';
+import { CardComponent, CardContentComponent, CardHeaderComponent, CardTitleComponent, FormLabelComponent, HeaderComponent } from '@gsej/tailwind-components';
 import { CommonModule } from '@angular/common';
+import { ButtonComponent } from '../../../components/button/button.component';
 
 @Component({
   selector: 'app-model2-inputs',

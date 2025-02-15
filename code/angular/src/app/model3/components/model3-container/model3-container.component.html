@@ -1,7 +1,7 @@
 <div class="flex mb-2">
   <gsej-ng-tailwind-header>Model 3</gsej-ng-tailwind-header>
   <div class="flex items-center">
-    <gsej-ng-tailwind-popup class="ml-4">
+    <app-popup class="ml-4">
       <p>This model splits the portfolio into two allocations each with its own fixed annual growth rate.
         For example, we could have 80% of the portfolio in a <em>Growth</em> allocation (e.g. a global equity fund) at a mean growth rate of 5% a year,
         and 20% in a <em>MinimalRisk</em> allocation (e.g. GILTs), with a mean growth rate of 1% per year.
@@ -14,7 +14,7 @@
       <p>
         In theory this method could result in a growth rate of less than -100%, which doesn't make sense, so I clip the growth rate at -99%.
       </p>
-    </gsej-ng-tailwind-popup>
+    </app-popup>
   </div>
 </div>
 <div class="grid grid-cols-2 pt-0">

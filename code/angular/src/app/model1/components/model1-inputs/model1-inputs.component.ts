@@ -2,7 +2,8 @@ import { ChangeDetectionStrategy, Component, EventEmitter, OnInit, Output } from
 import { FormsModule } from '@angular/forms';
 import localforage from 'localforage';
 import { Model1Inputs } from '../../models/Model1Inputs';
-import { ButtonComponent, CardComponent, CardContentComponent, CardHeaderComponent, CardTitleComponent, FormLabelComponent } from '@gsej/tailwind-components';
+import { CardComponent, CardContentComponent, CardHeaderComponent, CardTitleComponent, FormLabelComponent } from '@gsej/tailwind-components';
+import { ButtonComponent } from '../../../components/button/button.component';
 
 @Component({
   selector: 'app-model1-inputs',

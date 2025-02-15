@@ -3,7 +3,9 @@ import { FormsModule } from '@angular/forms';
 import localforage from 'localforage';
 import { Model4Inputs } from '../../models/Model4Inputs';
 import { CommonModule } from '@angular/common';
-import { ButtonComponent, CardComponent, CardContentComponent, CardHeaderComponent, CardTitleComponent, FormLabelComponent, PopupComponent } from '@gsej/tailwind-components';
+import { CardComponent, CardContentComponent, CardHeaderComponent, CardTitleComponent, FormLabelComponent } from '@gsej/tailwind-components';
+import { PopupComponent } from '../../../components/popup/popup.component';
+import { ButtonComponent } from '../../../components/button/button.component';
 
 
 @Component({
