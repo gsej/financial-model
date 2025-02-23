@@ -6,13 +6,12 @@ import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core
   standalone: true,
   imports: [CommonModule],
   template: `
-    <div class="pi-container">
+    <div class="pi-container text-lg">
       <span class="pi-symbol">&pi;</span>
-      <span class="hover-text">{{ text }}</span>
+      <span class="hover-text">&nbsp;&nbsp;{{ text }}</span>
     </div>
   `,
   styles: [`
-
     .hover-text {
       display: none;
     }
@@ -23,5 +22,7 @@ import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PiComponent {
-  text = "hello this is the expanded text";
+
+  @Input()
+  text = "";
 }

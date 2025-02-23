@@ -48,7 +48,6 @@ export class AppComponent {
   }
 
   public changeModel(event: any) {
-    console.log("model changed to " + event.target.value);
     this.model = event.target.value;
     this.store.setItem("selectedModel", this.model);
   }
