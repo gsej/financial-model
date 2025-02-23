@@ -1,3 +1,4 @@
 {
-  "gitHash": "${GITHASH}"
+  "gitHash": "${GITHASH}",
+  "apiUrl": "${API_URL}"
 }

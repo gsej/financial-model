@@ -10,6 +10,7 @@ jobs:
     env:
       WORKING_DIR: code/angular
       BUILD_OUTPUT_DIR: dist/pension-predictor/browser
+      API_URL: https://app-dev-pension-predictor.azurewebsites.net
     
     steps: 
       - name: checkout repo
