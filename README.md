@@ -69,6 +69,13 @@ specify rebalancing strategy
 
 Try dialog element for popups.
 
+Model 4 add reverse cummulative
+
+Add github link
+
+add link to blog
 \ Bugs
 
 Requires two clicks on recalculate before it does anything
+
+Tab order on model 4

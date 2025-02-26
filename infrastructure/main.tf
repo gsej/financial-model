@@ -30,13 +30,12 @@ resource "azurerm_linux_web_app" "linuxapp" {
   name                = local.app_service_name
   resource_group_name = azurerm_resource_group.group.name
   service_plan_id     = azurerm_service_plan.plan.id
-  location            = azurerm_resource_group.group.location    
-
-  # identity {
-  #   type = "SystemAssigned"
-  # }
+  location            = azurerm_resource_group.group.location 
     
   site_config {
+     application_stack {
+      dotnet_version = "8.0"
+    }
   }
 
   app_settings = {
