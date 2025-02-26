@@ -67,13 +67,17 @@ Move shared components into an npm package (keep within same repo for now)
 # Future
 specify rebalancing strategy
 
-Try dialog element for popups.
-
 Model 4 add reverse cummulative
 
 Add github link
 
+rename project - perhaps to portfolio-model
+
 add link to blog
+
+decent selector
+
+look at adding a display name to allocations (to allow spaces)
 \ Bugs
 
 Requires two clicks on recalculate before it does anything
