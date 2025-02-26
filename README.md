@@ -69,11 +69,7 @@ specify rebalancing strategy
 
 Model 4 add reverse cummulative
 
-Add github link
-
 rename project - perhaps to portfolio-model
-
-add link to blog
 
 decent selector
 
