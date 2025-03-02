@@ -1,15 +1,17 @@
-<div class="w-full flex justify-end">
-  <a class="p-1" href="https://github.com/gsej/pension-predictor">
-    <img alt="github icon" src="GitHub-Mark-32px.png" />
-  </a>
+<div class="flex justify-between mt-5">
+  <h1 class="font-heading text-3xl font-bold mx-6 min-w-fit">Pension predictor</h1>
+  <div class="w-full flex justify-end">
+    <a class="mx-5 p-1" href="https://github.com/gsej/pension-predictor">
+      <img alt="github icon" src="GitHub-Mark-32px.png" />
+    </a>
+  </div>
 </div>
 
-
 <div class="min-h-screen flex flex-col">
-
   <div class="mx-10 grid grid-cols-4 gap-10 rounded-xl p-6">
+
     <div>
-      <input type="radio" name="chart-type" id="model1" value="model1" class="peer hidden" checked (change)="changeModel($event)"/>
+      <input type="radio" name="chart-type" id="model1" value="model1" class="peer hidden" checked (change)="changeModel($event)" />
       <label for="model1" class="text-sm, font-medium, block cursor-pointer select-none rounded-xl p-2 text-center bg-gray-200 text-black peer-checked:bg-gray-500 peer-checked:font-bold peer-checked:text-white">Model 1</label>
     </div>
     <div>
@@ -25,26 +27,26 @@
       <label for="model4" class="text-sm, font-medium, block cursor-pointer select-none rounded-xl p-2 text-center bg-gray-200 text-black peer-checked:bg-gray-500 peer-checked:font-bold peer-checked:text-white">Model 4</label>
     </div>
   </div>
-
   <div class="flex-1 rounded-xl border bg-background font-mono">
+
     <main class="flex-1">
       <div class="flex-1 overflow-y-auto">
         <!-- application shell -->
         <div class="grid items-start gap-8 p-6">
           @if (model === 'model1') {
-            <app-model1-container></app-model1-container>
+          <app-model1-container></app-model1-container>
           }
 
           @if (model === 'model2') {
-            <app-model2-container></app-model2-container>
+          <app-model2-container></app-model2-container>
           }
 
           @if (model === 'model3') {
-            <app-model3-container></app-model3-container>
+          <app-model3-container></app-model3-container>
           }
 
           @if (model === 'model4') {
-            <app-model4-container></app-model4-container>
+          <app-model4-container></app-model4-container>
           }
         </div>
       </div>
