@@ -67,11 +67,10 @@ Move shared components into an npm package (keep within same repo for now)
 # Future
 specify rebalancing strategy
 
+add title and general explanation at the beginning
 Model 4 add reverse cummulative
 
 rename project - perhaps to portfolio-model
-
-decent selector
 
 look at adding a display name to allocations (to allow spaces)
 \ Bugs
