@@ -78,3 +78,7 @@ look at adding a display name to allocations (to allow spaces)
 Requires two clicks on recalculate before it does anything
 
 Tab order on model 4
+
+make some input values sticky - i.e. sharable across models (with a toggle to make them unsticky)
+
+think about the reset button. if we have sticky values how should it affect those?

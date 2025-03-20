@@ -8,6 +8,7 @@ import { Model3ChartComponent } from '../model3-chart/model3-chart.component';
 import { Model3InputsComponent } from '../model3-inputs/model3-inputs.component';
 import { Model3Prediction } from '../../models/Model3Prediction';
 import { PopupComponent } from '../../../components/popup/popup.component';
+import { model3 } from '../../../models';
 
 
 @Component({
@@ -24,6 +25,8 @@ import { PopupComponent } from '../../../components/popup/popup.component';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class Model3ContainerComponent {
+
+  description = model3;
 
   public prediction: Model3Prediction | null = null;
 

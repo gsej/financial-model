@@ -7,6 +7,7 @@ import { Model4InputsComponent } from '../model4-inputs/model4-inputs.component'
 import { Model4Prediction } from '../../models/Model4Prediction';
 import { HeaderComponent } from '@gsej/tailwind-components';
 import { PopupComponent } from '../../../components/popup/popup.component';
+import { model4 } from '../../../models';
 
 @Component({
   selector: 'app-model4-container',
@@ -22,6 +23,8 @@ import { PopupComponent } from '../../../components/popup/popup.component';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class Model4ContainerComponent {
+
+  description = model4;
 
   public prediction: Model4Prediction | null = null;
 

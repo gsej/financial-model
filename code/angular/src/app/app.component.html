@@ -1,5 +1,16 @@
 <div class="flex justify-between mt-5">
-  <h1 class="font-heading text-3xl font-bold mx-6 min-w-fit">Pension predictor</h1>
+
+  <div class="flex mb-2 min-w-fit">
+    <h1 class="font-heading text-3xl font-bold ml-6 min-w-fit">Pension predictor</h1>
+    <div class="flex items-center">
+      <app-popup id="title" class="pt-2 ml-3">
+        <p>Each <em>model</em> allows the growth of a portfolio to be modeled in a different way. The various models are explained more fully on the associated <a href="https://github.com/gsej/pension-predictor">github page</a>
+        </p>
+      </app-popup>
+    </div>
+  </div>
+
+
   <div class="w-full flex justify-end">
     <a class="mx-5 p-1" href="https://github.com/gsej/pension-predictor">
       <img alt="github icon" src="GitHub-Mark-32px.png" />
@@ -11,19 +22,19 @@
   <div class="mx-10 grid grid-cols-4 gap-10 rounded-xl p-6">
 
     <div>
-      <input type="radio" name="chart-type" id="model1" value="model1" class="peer hidden" checked (change)="changeModel($event)" />
+      <input type="radio" name="chart-type" id="model1" value="model1" class="peer hidden" [checked]="model === 'model1'" (change)="changeModel($event)" />
       <label for="model1" class="text-sm, font-medium, block cursor-pointer select-none rounded-xl p-2 text-center bg-gray-200 text-black peer-checked:bg-gray-500 peer-checked:font-bold peer-checked:text-white">Model 1</label>
     </div>
     <div>
-      <input type="radio" name="chart-type" id="model2" value="model2" class="peer hidden" (change)="changeModel($event)" />
+      <input type="radio" name="chart-type" id="model2" value="model2" class="peer hidden" [checked]="model === 'model2'" (change)="changeModel($event)" />
       <label for="model2" class="text-sm, font-medium, block cursor-pointer select-none rounded-xl p-2 text-center bg-gray-200 text-black peer-checked:bg-gray-500 peer-checked:font-bold peer-checked:text-white">Model 2</label>
     </div>
     <div>
-      <input type="radio" name="chart-type" id="model3" value="model3" class="peer hidden" (change)="changeModel($event)" />
+      <input type="radio" name="chart-type" id="model3" value="model3" class="peer hidden" [checked]="model === 'model3'" (change)="changeModel($event)" />
       <label for="model3" class="text-sm, font-medium, block cursor-pointer select-none rounded-xl p-2 text-center bg-gray-200 text-black peer-checked:bg-gray-500 peer-checked:font-bold peer-checked:text-white">Model 3</label>
     </div>
     <div>
-      <input type="radio" name="chart-type" id="model4" value="model4" class="peer hidden" (change)="changeModel($event)" />
+      <input type="radio" name="chart-type" id="model4" value="model4" class="peer hidden" [checked]="model === 'model4'" (change)="changeModel($event)" />
       <label for="model4" class="text-sm, font-medium, block cursor-pointer select-none rounded-xl p-2 text-center bg-gray-200 text-black peer-checked:bg-gray-500 peer-checked:font-bold peer-checked:text-white">Model 4</label>
     </div>
   </div>

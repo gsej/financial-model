@@ -8,6 +8,7 @@ import { Model2ChartComponent } from '../model2-chart/model2-chart.component';
 import { Model2InputsComponent } from '../model2-inputs/model2-inputs.component';
 import { Model2Prediction } from '../../models/Model2Prediction';
 import { PopupComponent } from '../../../components/popup/popup.component';
+import { model2 } from '../../../models';
 
 @Component({
   selector: 'app-model2-container',
@@ -23,6 +24,8 @@ import { PopupComponent } from '../../../components/popup/popup.component';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class Model2ContainerComponent {
+
+  description = model2;
 
   public prediction: Model2Prediction | null = null;
 

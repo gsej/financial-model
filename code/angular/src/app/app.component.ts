@@ -7,6 +7,8 @@ import { Model3ContainerComponent } from './model3/components/model3-container/m
 import { Model4ContainerComponent } from './model4/components/model4-container/model4-container.component';
 import { SettingsService } from './settings/settings.service';
 import { PiComponent } from './components/pi/pi.component';
+import { PopupComponent } from './components/popup/popup.component';
+import { HeaderComponent } from '@gsej/tailwind-components';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +16,8 @@ import { PiComponent } from './components/pi/pi.component';
   imports: [
     RouterOutlet,
     PiComponent,
+    PopupComponent,
+    HeaderComponent,
     Model1ContainerComponent,
     Model2ContainerComponent,
     Model3ContainerComponent,
@@ -41,6 +45,7 @@ export class AppComponent {
     });
 
     this.store.getItem("selectedModel").then((selectedModel: any) => {
+      console.log({selectedModel});
       if (selectedModel) {
         this.model = selectedModel;
       }
