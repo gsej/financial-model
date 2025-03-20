@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
 import { Model4ResultsComponent } from '../model4-results/model4-results.component';
 import { PredictionService } from '../../../prediction.service';
 import { Model4Inputs } from '../../models/Model4Inputs';
@@ -28,11 +28,15 @@ export class Model4ContainerComponent {
 
   public prediction: Model4Prediction | null = null;
 
-  constructor(private predictionService: PredictionService) { }
+  constructor(
+    private predictionService: PredictionService,
+    private changeDetector: ChangeDetectorRef
+  ) { }
 
   calculate(inputs: Model4Inputs) {
     this.predictionService.getModel4Prediction(inputs).subscribe(prediction => {
       this.prediction = prediction;
+      this.changeDetector.markForCheck();
     });
   }
 }

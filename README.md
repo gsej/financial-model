@@ -73,9 +73,9 @@ Model 4 add reverse cummulative
 rename project - perhaps to portfolio-model
 
 look at adding a display name to allocations (to allow spaces)
-\ Bugs
 
-Requires two clicks on recalculate before it does anything
+Bugs
+
 
 Tab order on model 4
 
