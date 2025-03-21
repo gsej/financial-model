@@ -1,4 +1,4 @@
-# pension-predictor
+# fincancial-model
 
 Implements the pension planning spreadsheet presented by Lars Kroijer in one of his video series, but using code rather than 
 Excel.
@@ -62,20 +62,11 @@ Talks about difference between CAGR and average growth rate.
 
 We should specify the CAGR, but then calculate average annual return for the calculations of each year. Look up formula.
 
-Move shared components into an npm package (keep within same repo for now)
-
 # Future
 specify rebalancing strategy
 
-add title and general explanation at the beginning
 Model 4 add reverse cummulative
 
 rename project - perhaps to portfolio-model
 
-look at adding a display name to allocations (to allow spaces)
 
-Bugs
-
-make some input values sticky - i.e. sharable across models (with a toggle to make them unsticky)
-
-think about the reset button. if we have sticky values how should it affect those?

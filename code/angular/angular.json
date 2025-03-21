@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "pension-predictor": {
+    "financial-model": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/pension-predictor",
+            "outputPath": "dist/financial-model",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -64,10 +64,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "pension-predictor:build:production"
+              "buildTarget": "financial-model:build:production"
             },
             "development": {
-              "buildTarget": "pension-predictor:build:development"
+              "buildTarget": "financial-model:build:development"
             }
           },
           "defaultConfiguration": "development"

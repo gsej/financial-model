@@ -63,5 +63,5 @@ resource "azurerm_federated_identity_credential" "github_federated_identity" {
   audience            = ["api://AzureADTokenExchange"]
   issuer             = "https://token.actions.githubusercontent.com"
   parent_id          = azurerm_user_assigned_identity.github_identity.id
-  subject            = "repo:gsej/pension-predictor:environment:Production"
+  subject            = "repo:gsej/financial-model:environment:Production"
 }

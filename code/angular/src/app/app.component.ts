@@ -28,7 +28,7 @@ import { HeaderComponent } from '@gsej/tailwind-components';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent {
-  title = 'pension-predictor';
+  title = 'financial-model';
 
   private store: LocalForage;
 

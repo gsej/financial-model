@@ -3,7 +3,7 @@ variable "location" {
 }
 
 variable service_name {
-  default = "pension-predictor"
+  default = "financial-model"
 }
 
 variable environment {

@@ -9,8 +9,8 @@ jobs:
 
     env:
       WORKING_DIR: code/angular
-      BUILD_OUTPUT_DIR: dist/pension-predictor/browser
-      API_URL: https://app-dev-pension-predictor.azurewebsites.net
+      BUILD_OUTPUT_DIR: dist/financial-model/browser
+      API_URL: https://app-dev-financial-model.azurewebsites.net
     
     steps: 
       - name: checkout repo
@@ -25,7 +25,7 @@ jobs:
       - run: npm install
         working-directory: ${{ env.WORKING_DIR }}
 
-      - run: npm run build -- --base-href /pension-predictor/
+      - run: npm run build -- --base-href /financial-model/
         working-directory: ${{ env.WORKING_DIR }}
 
       - name: populate settings.json

@@ -1,12 +1,12 @@
 {
-  "name": "pension-predictor",
+  "name": "financial-model",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve --port 4300",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "publish": "ng build --base-href /pension-predictor/",
+    "publish": "ng build --base-href /financial-model/",
     "test": "ng test"
   },
   "private": true,

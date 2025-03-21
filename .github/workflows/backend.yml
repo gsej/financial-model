@@ -40,7 +40,7 @@ jobs:
     environment: Production # case is significant
 
     env:
-      APP_NAME: app-dev-pension-predictor
+      APP_NAME: app-dev-financial-model
  
     permissions:
       id-token: write #This is required for requesting the JWT
