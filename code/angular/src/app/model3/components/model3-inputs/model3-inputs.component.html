@@ -38,15 +38,15 @@
       <div class="flex gap-4 mt-1">
         <div class="flex-1">
           <gsej-ng-tailwind-formlabel [for]="'proportion' + i">Proportion</gsej-ng-tailwind-formlabel>
-          <input [tabindex]="(7 + i).toString()" class="input max-w-xs" type="number" [id]="'proportion' + i" [name]="'proportion' + i" [(ngModel)]="allocation.proportion" />
+          <input [tabindex]="(7 + i * 3).toString()" class="input max-w-xs" type="number" [id]="'proportion' + i" [name]="'proportion' + i" [(ngModel)]="allocation.proportion" />
         </div>
         <div class="flex-1">
           <gsej-ng-tailwind-formlabel [for]="'meanAnnualReturn' + i">Mean Annual Return</gsej-ng-tailwind-formlabel>
-          <input [tabindex]="(9 + i).toString()" class="input max-w-xs" type="number" [id]="'meanAnnualReturn' + i" [name]="'meanAnnualReturn' + i" [(ngModel)]="allocation.meanAnnualReturn" />
+          <input [tabindex]="(8 + i *3).toString()" class="input max-w-xs" type="number" [id]="'meanAnnualReturn' + i" [name]="'meanAnnualReturn' + i" [(ngModel)]="allocation.meanAnnualReturn" />
         </div>
         <div class="flex-1">
           <gsej-ng-tailwind-formlabel [for]="'standardDeviation' + i">Standard Deviation</gsej-ng-tailwind-formlabel>
-          <input [tabindex]="(11 + i).toString()" class="input max-w-xs" type="number" [id]="'standardDeviation' + i" [name]="'standardDeviation' + i" [(ngModel)]="allocation.standardDeviation" />
+          <input [tabindex]="(9 + i * 3 ).toString()" class="input max-w-xs" type="number" [id]="'standardDeviation' + i" [name]="'standardDeviation' + i" [(ngModel)]="allocation.standardDeviation" />
         </div>
       </div>
       }

@@ -28,15 +28,15 @@
       <div class="flex gap-4 mt-1">
         <div class="flex-1">
           <gsej-ng-tailwind-formlabel [for]="'proportion' + i">Proportion</gsej-ng-tailwind-formlabel>
-          <input [tabindex]="(7 + i).toString()" class="input max-w-xs" type="number" [id]="'proportion' + i" [name]="'proportion' + i" [(ngModel)]="allocation.proportion" />
+          <input [tabindex]="(7 + i * 3).toString()" class="input max-w-xs" type="number" [id]="'proportion' + i" [name]="'proportion' + i" [(ngModel)]="allocation.proportion" />
         </div>
         <div class="flex-1">
           <gsej-ng-tailwind-formlabel [for]="'meanAnnualReturn' + i">Mean Annual Return</gsej-ng-tailwind-formlabel>
-          <input [tabindex]="(9 + i).toString()" class="input max-w-xs" type="number" [id]="'meanAnnualReturn' + i" [name]="'meanAnnualReturn' + i" [(ngModel)]="allocation.meanAnnualReturn" />
+          <input [tabindex]="(8 + i * 3).toString()" class="input max-w-xs" type="number" [id]="'meanAnnualReturn' + i" [name]="'meanAnnualReturn' + i" [(ngModel)]="allocation.meanAnnualReturn" />
         </div>
         <div class="flex-1">
           <gsej-ng-tailwind-formlabel [for]="'standardDeviation' + i">Standard Deviation</gsej-ng-tailwind-formlabel>
-          <input [tabindex]="(11 + i).toString()" class="input max-w-xs" type="number" [id]="'standardDeviation' + i" [name]="'standardDeviation' + i" [(ngModel)]="allocation.standardDeviation" />
+          <input [tabindex]="(9 + i * 3).toString()" class="input max-w-xs" type="number" [id]="'standardDeviation' + i" [name]="'standardDeviation' + i" [(ngModel)]="allocation.standardDeviation" />
         </div>
       </div>
       }
@@ -46,7 +46,7 @@
           <div class="w-full">
             <gsej-ng-tailwind-formlabel for="randomSeed">Random Seed</gsej-ng-tailwind-formlabel>
             <div class="w-full flex">
-              <input tabindex="30" class="input max-w-xs" type="number" id="randomSeed" name="randomSeed" [(ngModel)]="inputs.randomSeed" />
+              <input tabindex="15" class="input max-w-xs" type="number" id="randomSeed" name="randomSeed" [(ngModel)]="inputs.randomSeed" />
               <app-popup id="randomSeedPopup" class="ml-4 self-center">
                 <p>Leave blank to use a new random seed for each recalculation. Entering a fixed number means the same random number sequence will be
                   used each time, which makes it easier to compare the results when other parameters are changed.
@@ -57,7 +57,7 @@
         </div>
         <div class="flex-1">
           <gsej-ng-tailwind-formlabel for="iterations">Iterations</gsej-ng-tailwind-formlabel>
-          <input tabindex="15" class="input max-w-xs" type="number" id="iterations" name="iterations" [(ngModel)]="inputs.iterations" />
+          <input tabindex="30" class="input max-w-xs" type="number" id="iterations" name="iterations" [(ngModel)]="inputs.iterations" />
         </div>
       </div>
 
