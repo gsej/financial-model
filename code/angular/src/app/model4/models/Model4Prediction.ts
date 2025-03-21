@@ -10,6 +10,7 @@ export class Model4Prediction {
   percentiles!: Percentile[];
   bands!: Band[];
   cumulativeBands!: Band[];
+  reverseCumulativeBands!: Band[];
 }
 
 export class Percentile {

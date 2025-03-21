@@ -90,6 +90,11 @@ public class Model4Predictor
             prediction.CumulativeBands.Add(GetBand(amounts, 0, bands[i]));
         }
         
+        for (var i = 1; i < bands.Count; i++)
+        {
+            prediction.ReverseCumulativeBands.Add(GetBand(amounts, bands[i], 100_000_000));
+        }
+        
         return prediction;
     }
     

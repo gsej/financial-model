@@ -11,6 +11,7 @@ public class Model4Prediction
     public decimal Maximum { get; set; }
     public List<Band> Bands { get; set; } = new();
     public List<Band> CumulativeBands { get; set; } = new();
+    public List<Band> ReverseCumulativeBands { get; set; } = new();
     
     public List<Model4Iteration> Iterations { get; set; } = new();
 }

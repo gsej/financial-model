@@ -20,6 +20,6 @@ Content-Type: application/json
         }
     ],
     "targetAge": 67,
-    "iterations": 1000,
-    "randomSeed": null
+    "iterations": 3,
+    "randomSeed": 1
 }   

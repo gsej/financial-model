@@ -4,7 +4,7 @@
   </div>
   <div>
     <form #form="ngForm">
-      <div class="mx-10 grid grid-cols-2 gap-10 rounded-xl ">
+      <div class="mx-10 grid grid-cols-3 gap-10 rounded-xl ">
         <div>
           <input type="radio" name="chart-type" id="frequency" value="frequency" class="peer hidden" checked [(ngModel)]="chartType" (ngModelChange)="onCumulativeChange($event)" />
           <label for="frequency" class="text-sm, font-medium, block cursor-pointer select-none rounded-xl p-2 text-center bg-gray-200 text-black peer-checked:bg-gray-500 peer-checked:font-bold peer-checked:text-white">Frequency</label>
@@ -12,6 +12,10 @@
         <div>
           <input type="radio" name="chart-type" id="cumulative" value="cumulative" class="peer hidden" [(ngModel)]="chartType" (ngModelChange)="onCumulativeChange($event)" />
           <label for="cumulative" class="text-sm, font-medium, block cursor-pointer select-none rounded-xl p-2 text-center bg-gray-200 text-black peer-checked:bg-gray-500 peer-checked:font-bold peer-checked:text-white">Cumulative</label>
+        </div>
+        <div>
+          <input type="radio" name="chart-type" id="reverse-cumulative" value="reverse-cumulative" class="peer hidden" [(ngModel)]="chartType" (ngModelChange)="onCumulativeChange($event)" />
+          <label for="reverse-cumulative" class="text-sm, font-medium, block cursor-pointer select-none rounded-xl p-2 text-center bg-gray-200 text-black peer-checked:bg-gray-500 peer-checked:font-bold peer-checked:text-white">Reverse Cumulative</label>
         </div>
       </div>
     </form>
