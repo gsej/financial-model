@@ -1,14 +1,15 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import localforage from 'localforage';
 import { Model1ContainerComponent } from './model1/components/model1-container/model1-container.component';
 import { Model2ContainerComponent } from './model2/components/model2-container/model2-container.component';
-import localforage from 'localforage';
 import { Model3ContainerComponent } from './model3/components/model3-container/model3-container.component';
 import { Model4ContainerComponent } from './model4/components/model4-container/model4-container.component';
 import { SettingsService } from './settings/settings.service';
 import { PiComponent } from './components/pi/pi.component';
 import { PopupComponent } from './components/popup/popup.component';
 import { HeaderComponent } from '@gsej/tailwind-components';
+import { Model5ContainerComponent } from './model5/components/model5-container/model5-container.component';
 
 @Component({
   selector: 'app-root',
@@ -22,6 +23,7 @@ import { HeaderComponent } from '@gsej/tailwind-components';
     Model2ContainerComponent,
     Model3ContainerComponent,
     Model4ContainerComponent,
+    Model5ContainerComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',

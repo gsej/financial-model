@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
 import { Model3ResultsComponent } from '../model3-results/model3-results.component';
 import { HeaderComponent } from '@gsej/tailwind-components';
 
@@ -30,11 +30,14 @@ export class Model3ContainerComponent {
 
   public prediction: Model3Prediction | null = null;
 
-  constructor(private predictionService: PredictionService) { }
+  constructor(private predictionService: PredictionService,
+     private changeDetector: ChangeDetectorRef
+  ) { }
 
   calculate(inputs: Model3Inputs) {
     this.predictionService.getModel3Prediction(inputs).subscribe(prediction => {
       this.prediction = prediction;
+      this.changeDetector.markForCheck();
     });
   }
 }

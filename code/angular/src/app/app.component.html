@@ -21,7 +21,7 @@
 </div>
 
 <div class="min-h-screen flex flex-col">
-  <div class="mx-10 grid grid-cols-4 gap-10 rounded-xl p-6">
+  <div class="mx-10 grid grid-cols-5 gap-10 rounded-xl p-6">
 
     <div>
       <input type="radio" name="chart-type" id="model1" value="model1" class="peer hidden" [checked]="model === 'model1'" (change)="changeModel($event)" />
@@ -38,6 +38,10 @@
     <div>
       <input type="radio" name="chart-type" id="model4" value="model4" class="peer hidden" [checked]="model === 'model4'" (change)="changeModel($event)" />
       <label for="model4" class="text-sm, font-medium, block cursor-pointer select-none rounded-xl p-2 text-center bg-gray-200 text-black peer-checked:bg-gray-500 peer-checked:font-bold peer-checked:text-white">Model 4</label>
+    </div>
+     <div>
+      <input type="radio" name="chart-type" id="model5" value="model5" class="peer hidden" [checked]="model === 'model5'" (change)="changeModel($event)" />
+      <label for="model5" class="text-sm, font-medium, block cursor-pointer select-none rounded-xl p-2 text-center bg-gray-200 text-black peer-checked:bg-gray-500 peer-checked:font-bold peer-checked:text-white">Model 5</label>
     </div>
   </div>
   <div class="flex-1 rounded-xl border bg-background font-mono">
@@ -60,6 +64,10 @@
 
           @if (model === 'model4') {
           <app-model4-container></app-model4-container>
+          }
+
+          @if (model === 'model5') {
+          <app-model5-container></app-model5-container>
           }
         </div>
       </div>

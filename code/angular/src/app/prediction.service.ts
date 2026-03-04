@@ -11,6 +11,8 @@ import { Model3Prediction } from './model3/models/Model3Prediction';
 import { Model4Prediction } from './model4/models/Model4Prediction';
 import { Model4Inputs } from './model4/models/Model4Inputs';
 import { SettingsService } from './settings/settings.service';
+import { Model5Prediction } from './model5/models/Model5Prediction';
+import { Model5Inputs } from './model5/models/Model5Inputs';
 
 @Injectable({
   providedIn: 'root'
@@ -38,4 +40,9 @@ export class PredictionService {
   getModel4Prediction(request: Model4Inputs): Observable<Model4Prediction> {
     return this.http.post<Model4Prediction>(`${this.apiUrl}/api/model4`, request);
   }
+
+  getModel5Prediction(request: Model5Inputs): Observable<Model5Prediction> {
+    return this.http.post<Model5Prediction>(`${this.apiUrl}/api/model3`, request);
+  }
+
 }
