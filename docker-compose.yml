@@ -1,0 +1,10 @@
+services:
+  api:
+    build:
+      context: ./code/dotnet
+      dockerfile: Dockerfile
+    ports:
+      - "5300:8080"
+    environment:
+      - ASPNETCORE_URLS=http://+:8080
+        # restart: always
